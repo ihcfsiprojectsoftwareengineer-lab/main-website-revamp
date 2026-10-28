@@ -17,7 +17,7 @@
     "details.howToReach": "optional {venue, address, mapUrl}. Venue falls back to the event venue"
   },
 
-  "settings": { "detailsPage": "event-details.html" },
+  "settings": { "detailsPage": "event_details.html" },
 
   "types": {
     "hackathon": "Hackathons & Challenges",
