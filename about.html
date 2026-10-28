@@ -5,22 +5,27 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>IHCFSI – Driving research, education and collaboration in sustainability</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Mukta:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="index.css">
 </head>
 <body>
 
-    <header class="site-header">
+<header class="site-header">
   <div class="container header-inner">
     <a class="brand" href="index.html" aria-label="IHCFSI home">
       <span class="logo-mark" aria-hidden="true"><img src="/assets/honeywell_logo.svg"></span>
-      <span class="brand-name">IHCFSI</span>
       <span class="brand-divider"></span>
       <span class="iitb-seal" aria-hidden="true"><img src="/assets/IITB_logo.png"></span>
     </a>
     <div class="header-right">
       <nav class="main-nav" aria-label="Main">
-        <a href="about.html" class="caret">About</a>
+        <div class="nav-dropdown">
+          <a href="about.html" class="caret" aria-haspopup="true">About</a>
+          <ul class="dropdown-menu">
+            <li><a href="about.html#center">Center</a></li>
+            <li><a href="team.html">Team</a></li>
+          </ul>
+        </div>
         <a href="education.html">Education & Training</a>
         <a href="events.html">Events</a>
       </nav>
@@ -31,68 +36,75 @@
 <main>
   <h1 class="sr-only">About Us</h1>
 
-  <!-- 1. About the Centre -->
+  <!-- 1. About the Centre: text card + image slider that sits outside (overlapping) the card -->
   <section class="container about-wrap" aria-labelledby="about-title">
+    <div class="about-grid">
     <div class="about-card">
-      <div class="about-text">
       <h2 id="about-title" class="section-title">About the Centre</h2>
       <p>The IIT Bombay-Honeywell Centre of Excellence for Future Skills &amp; Innovation (IHCFSI) has been established to build future-ready capabilities in sustainability through an integrated approach to learning, research, and innovation.</p>
       <p>Developed under Honeywell India’s flagship skilling initiative, Saksham, the Centre reflects a shared commitment to strengthening the talent, knowledge, and implementation capacity needed to respond to emerging sustainability challenges.</p>
       <p>By combining academic learning with applied research, the Centre supports work in areas such as sustainability assessment, water and sanitation, energy security, sustainable finance, and policy advocacy.</p>
       <p>It is envisioned as a platform where knowledge can move into practice-supporting real-world adoption, nurturing skilled professionals, and contributing meaningfully to India’s sustainability transition.</p>
       </div>
-      <div class="about-media" role="img" aria-label="About the Centre image"></div>
-    </div>
-  </section>
 
-  <!-- 2. Vision and Mission (same split layout as News / Events) -->
-  <section class="feed vm-feed" aria-label="Vision and Mission">
-    <div class="feed-col feed-news">
-      <div class="feed-inner">
-        <div class="feed-head"><h2>Vision</h2></div>
-        <article class="card vm-item">
-          <div class="card-img" aria-hidden="true"></div>
-          <h3>Our Vision</h3>
-          <p>Replace with the Centre’s vision statement.</p>
-        </article>
-      </div>
-    </div>
-    <div class="feed-col feed-events">
-      <div class="feed-inner">
-        <div class="feed-head"><h2>Mission</h2></div>
-        <article class="card vm-item">
-          <div class="card-img" aria-hidden="true"></div>
-          <h3>Our Mission</h3>
-        <ul>
-            <li>Replace with mission point one.</li>
-            <li>Replace with mission point two.</li>
-            <li>Replace with mission point three.</li>
-        </ul>
-        </article>
+      <div class="about-slider" role="region" aria-roledescription="carousel" aria-label="About the Centre images">
+        <div class="as-viewport">
+          <div class="as-track">
+            <!-- Replace the src values with your own images (4:3 works best). If a file is missing, the colour panel shows instead. -->
+            <figure class="as-slide as-s1"><img src="/assets/about-1.jpg" alt="Replace with a description of image 1" onerror="this.remove()"></figure>
+            <figure class="as-slide as-s2"><img src="/assets/about-2.jpg" alt="Replace with a description of image 2" onerror="this.remove()"></figure>
+            <figure class="as-slide as-s3"><img src="/assets/about-3.jpg" alt="Replace with a description of image 3" onerror="this.remove()"></figure>
+          </div>
+        </div>
+        <button class="as-btn as-prev" type="button" aria-label="Previous image">&#8249;</button>
+        <button class="as-btn as-next" type="button" aria-label="Next image">&#8250;</button>
+        <div class="as-controls">
+          <div class="as-dots"></div>
+          <button class="as-toggle" type="button" aria-label="Pause slideshow">&#10074;&#10074;</button>
+        </div>
       </div>
     </div>
   </section>
 
-<section>
-<h2>Delivering measurable outcomes at scale
-</h2>
-<p>The Centre of Excellence aims to accelerate sustainability-driven transformation through skill development, research, entrepreneurship, and ecosystem engagement. It is designed to systematically identify gaps, generate scalable solutions, and drive their adoption across institutions, markets, and communities. By combining capacity building, innovation, and collaborative partnerships, the Centre aims to translate sustainability ambitions into measurable and meaningful impact.
-</p>
+  <!-- 2. Vision and Mission -->
+  <section class="vm-section" aria-label="Vision and Mission">
+    <div class="container vm-grid">
+      <article class="nc-card is-active">
+        <span class="vm-shape" aria-hidden="true"></span>
+        <div class="vm-body">
+          <svg class="nc-icon" viewBox="0 0 24 24" width="52" height="52" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg>
+          <h2>Our Vision</h2>
+          <p>To be a leading global technology university that provides transformative education to create leaders and innovators and generates new knowledge for society and industry.</p>
+    </div>
+        <span class="vm-go" aria-hidden="true"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg></span>
+      </article>
 
-<!---
-100K+
-Students to be Trained
-15+
-Modules to be Developed
-15+
-Research Projects to be Initiated
-15+
-Research Fellows to be Supported
-5+
-Startups to be Incubated
+      <article class="nc-card">
+        <span class="vm-shape" aria-hidden="true"></span>
+        <div class="vm-body">
+          <svg class="nc-icon" viewBox="0 0 24 24" width="52" height="52" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.2"/></svg>
+          <h2>Our Mission</h2>
+        <p>
+          To create an ambience in which new ideas, research, and scholarship flourish, and from which the leaders and innovators of tomorrow emerge. To address problems faced by the nation and the world through the talent we nurture and the research we do.
+        </p>
+      </div>
+        <span class="vm-go" aria-hidden="true"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg></span>
+      </article>
+    </div>
+  </section>
 
--->
+  <!-- 3. Outcomes + counters -->
+  <section class="outcomes container" id="outcomes" aria-labelledby="outcomes-title">
+    <h2 id="outcomes-title">Delivering measurable outcomes at scale</h2>
+    <p>The Centre of Excellence aims to accelerate sustainability-driven transformation through skill development, research, entrepreneurship, and ecosystem engagement. It is designed to systematically identify gaps, generate scalable solutions, and drive their adoption across institutions, markets, and communities. By combining capacity building, innovation, and collaborative partnerships, the Centre aims to translate sustainability ambitions into measurable and meaningful impact.</p>
 
+    <ul class="stats">
+      <li><span class="stat-num" aria-hidden="true" data-count="100" data-suffix="K+">100K+</span><span class="sr-only">100K+</span><span class="stat-label">Students to be Trained</span></li>
+      <li><span class="stat-num" aria-hidden="true" data-count="13" data-suffix="+">13+</span><span class="sr-only">13+</span><span class="stat-label">Modules to be Developed</span></li>
+      <li><span class="stat-num" aria-hidden="true" data-count="13" data-suffix="+">13+</span><span class="sr-only">13+</span><span class="stat-label">Research Projects to be Initiated</span></li>
+      <li><span class="stat-num" aria-hidden="true" data-count="13" data-suffix="+">13+</span><span class="sr-only">13+</span><span class="stat-label">Research Fellows to be Supported</span></li>
+      <li><span class="stat-num" aria-hidden="true" data-count="4" data-suffix="+">4+</span><span class="sr-only">4+</span><span class="stat-label">Startups to be Incubated</span></li>
+    </ul>
 </section>
 
 
@@ -103,8 +115,8 @@ Startups to be Incubated
 <footer class="site-footer">
   <div class="container footer-grid">
     <div class="footer-about">
-      <div class="footer-brand"><span class="logo-mark" aria-hidden="true"></span><span><small>IIT Bombay Reseach Hub for<br><b>Green Energy &amp; Sustainability</b></small><strong>IHCFSI</strong></span></div>
-      <address>IIT-Bombay Honeywell COE for Future Skills and Innovation, 6th Floor, DSSE Building, Near Central Library, Behind Main Building,<br>IIT Bombay, Powai<br>Mumbai 400076 Maharashtra INDIA.</address>
+      <a class="footer-brand" href="index.html" aria-label="IHCFSI home"><span class="footer-honeywell-wrap" aria-hidden="true"><img class="footer-honeywell" src="/assets/honeywell_logo.svg" alt=""></span><span class="footer-brand-name"></span><span class="footer-brand-divider" aria-hidden="true"></span><span class="footer-iitb-wrap" aria-hidden="true"><img class="footer-iitb" src="/assets/IITB_logo.png" alt=""></span></a>
+      <address>IIT Bombay–Honeywell CoE for Future Skills and Innovation, 6th Floor, DSSE Building, Near Central Library, Behind Main Building,<br>IIT Bombay, Powai<br>Mumbai 400076 Maharashtra INDIA.</address>
       <p>9122 2576 5251  &nbsp;|&nbsp; <a href="mailto:office.ihcfsi@iitb.ac.in">office.ihcfsi@iitb.ac.in</a></p>
       <p><a href="#">&#9873; View Location on Map</a></p>
       <ul class="social">
@@ -114,14 +126,14 @@ Startups to be Incubated
         <li><a href="#" aria-label="Facebook">f</a></li>
         <li><a href="#" aria-label="X">X</a></li>
       </ul>
-      <p class="copy">&copy; 2026. IIT Bombay Research Hub for Green Energy and Sustainability. All rights reserved.</p>
+      <p class="copy">&copy; 2026. IIT Bombay–Honeywell CoE for Future Skills and Innovation.</p> <p class="copy">All rights reserved.</p>
     </div>
     <div class="quick">
       <h3>Quick Links</h3>
       <ul>
-        <li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="education.html">Training and Education</a></li>
+        <li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="education.html">Education & Training</a></li>
         <li><a href="events.html">Events</a></li>
-        <li><a href="#">Sitemap</a></li>
+        <li><a href="sitemap.html">Sitemap</a></li>
       </ul>
     </div>
     <form class="write" onsubmit="return false">
@@ -135,5 +147,95 @@ Startups to be Incubated
     </form>
   </div>
 </footer>
+<script>
+/* About image slider */
+(function () {
+  var root = document.querySelector('.about-slider');
+  if (!root) return;
+  var track = root.querySelector('.as-track');
+  var slides = Array.prototype.slice.call(track.children);
+  var dotsBox = root.querySelector('.as-dots');
+  var toggle = root.querySelector('.as-toggle');
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var i = 0, timer = null, paused = reduce;
+
+  var dots = slides.map(function (_, n) {
+    var b = document.createElement('button');
+    b.type = 'button';
+    b.setAttribute('aria-label', 'Show image ' + (n + 1));
+    b.addEventListener('click', function () { go(n); start(); });
+    dotsBox.appendChild(b);
+    return b;
+  });
+
+  function go(n) {
+    i = (n + slides.length) % slides.length;
+    track.style.transform = 'translateX(-' + (i * 100) + '%)';
+    slides.forEach(function (s, k) { s.setAttribute('aria-hidden', k !== i); });
+    dots.forEach(function (d, k) {
+      if (k === i) d.setAttribute('aria-current', 'true'); else d.removeAttribute('aria-current');
+    });
+  }
+  function stop() { clearInterval(timer); timer = null; }
+  function start() { stop(); if (!paused) timer = setInterval(function () { go(i + 1); }, 5000); }
+  function syncToggle() {
+    toggle.innerHTML = paused ? '&#9654;' : '&#10074;&#10074;';
+    toggle.setAttribute('aria-label', paused ? 'Play slideshow' : 'Pause slideshow');
+  }
+
+  root.querySelector('.as-prev').addEventListener('click', function () { go(i - 1); start(); });
+  root.querySelector('.as-next').addEventListener('click', function () { go(i + 1); start(); });
+  toggle.addEventListener('click', function () { paused = !paused; syncToggle(); start(); });
+  root.addEventListener('mouseenter', stop);
+  root.addEventListener('mouseleave', start);
+  root.addEventListener('focusin', stop);
+  root.addEventListener('focusout', start);
+
+  var x0 = null;
+  root.addEventListener('touchstart', function (e) { x0 = e.touches[0].clientX; }, { passive: true });
+  root.addEventListener('touchend', function (e) {
+    if (x0 === null) return;
+    var dx = e.changedTouches[0].clientX - x0;
+    if (Math.abs(dx) > 40) { go(i + (dx < 0 ? 1 : -1)); start(); }
+    x0 = null;
+  });
+
+  syncToggle(); go(0); start();
+})();
+
+/* Outcome counters: count up every time the row scrolls into view, reset when it leaves */
+(function () {
+  var box = document.querySelector('.stats');
+  if (!box || !('IntersectionObserver' in window)) return;
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return; // keep final numbers
+  var nums = Array.prototype.slice.call(box.querySelectorAll('.stat-num'));
+  var raf = 0, running = false, DURATION = 1800;
+
+  function show(el, v) { el.textContent = Math.round(v) + (el.dataset.suffix || ''); }
+  function reset() {
+    cancelAnimationFrame(raf); running = false;
+    nums.forEach(function (el) { show(el, 0); });
+  }
+  function play() {
+    if (running) return;
+    running = true;
+    var t0 = performance.now();
+    (function tick(now) {
+      var p = Math.min((now - t0) / DURATION, 1);
+      var eased = 1 - Math.pow(1 - p, 3);
+      nums.forEach(function (el) { show(el, (+el.dataset.count) * eased); });
+      if (p < 1) raf = requestAnimationFrame(tick);
+    })(t0);
+  }
+
+  reset();
+  new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (e.intersectionRatio >= 0.4) play();
+      else if (!e.isIntersecting) reset();
+    });
+  }, { threshold: [0, 0.4] }).observe(box);
+})();
+</script>
 </body>
 </html>

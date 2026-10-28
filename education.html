@@ -2,34 +2,39 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>IHCFSI – Driving research, education and collaboration in sustainability</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&family=Poppins:wght@400;600&display=swap"
-    rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>IHCFSI – Driving research, education and collaboration in sustainability</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Mukta:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<link rel="stylesheet" href="index.css">
 </head>
 
 <body>
 
-  <header class="site-header">
-    <div class="container header-inner">
-      <a class="brand" href="index.html" aria-label="IHCFSI home">
-        <span class="logo-mark" aria-hidden="true"><img src="/assets/honeywell_logo.svg"></span>
-        <span class="brand-name">IHCFSI</span>
-        <span class="brand-divider"></span>
-        <span class="iitb-seal" aria-hidden="true"><img src="/assets/IITB_logo.png"></span>
-      </a>
-      <div class="header-right">
-        <nav class="main-nav" aria-label="Main">
-          <a href="about.html" class="caret">About</a>
-          <a href="education.html">Education & Training</a>
-          <a href="events.html">Events</a>
-        </nav>
-      </div>
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="index.html" aria-label="IHCFSI home">
+      <span class="logo-mark" aria-hidden="true"><img src="/assets/honeywell_logo.svg"></span>
+      <span class="brand-divider"></span>
+      <span class="iitb-seal" aria-hidden="true"><img src="/assets/IITB_logo.png"></span>
+    </a>
+    <div class="header-right">
+      <nav class="main-nav" aria-label="Main">
+        <div class="nav-dropdown">
+          <a href="about.html" class="caret" aria-haspopup="true">About</a>
+          <ul class="dropdown-menu">
+            <li><a href="about.html#center">Center</a></li>
+            <li><a href="team.html">Team</a></li>
+          </ul>
+        </div>
+        <a href="education.html">Education & Training</a>
+        <a href="events.html">Events</a>
+      </nav>
     </div>
-  </header>
+  </div>
+</header>
 
   <main>
     <section class="intro container">
@@ -42,85 +47,90 @@
         IIT Bombay's academic excellence meets Honeywell's commitment to future skills and social impact. Together, they
         empower learners to build practical, interdisciplinary sustainability knowledge relevant to industries,
         professions, and communities across India.
+      </p>
       <ul class="pillars">
-        <li><span>&#9783;</span>
+        <li><span aria-hidden="true"><i class="fa-solid fa-layer-group"></i></span>
           <p>5 Courses</p>
           <p>3 core courses + 2 electives tailored to your interests</p>
-
         </li>
-        <li><span>&#9906;</span>
+        <li><span aria-hidden="true"><i class="fa-solid fa-clock"></i></span>
           <p>40 Hours</p>
-          <p>
-            Structured, expert-led learning at your own pace</p>
-
+          <p>Structured, expert-led learning at your own pace</p>
         </li>
-        <li><span>&#9776;</span>
-          <p>Online & Flexible</p>
+        <li><span aria-hidden="true"><i class="fa-solid fa-laptop"></i></span>
+          <p>Online &amp; Flexible</p>
           <p>Learn from anywhere across India</p>
         </li>
-        <li><span>&#9728;</span>
+        <li><span aria-hidden="true"><i class="fa-solid fa-award"></i></span>
           <p>IIT Bombay Certificate</p>
-          <p>
-            Recognised credential from a premier institution</p>
+          <p>Recognised credential from a premier institution</p>
         </li>
-        <li><span>&#9873;</span>
+        <li><span aria-hidden="true"><i class="fa-solid fa-shapes"></i></span>
           <p>Interdisciplinary</p>
-          <p>
-            Curriculum spanning engineering, finance, policy & more</p>
+          <p>Curriculum spanning engineering, finance, policy &amp; more</p>
         </li>
       </ul>
-      </p>
     </section>
 
 
+    <!-- 2. Who / Why: bento tiles -->
+    <section class="bento-band" aria-label="Who should enroll and why">
+      <div class="container">
 
-    <!-- 2. Vision and Mission (same split layout as News / Events) -->
-    <section class="feed vm-feed" aria-label="Vision and Mission">
-      <div class="feed-col feed-news">
-        <div class="feed-inner">
-          <div class="feed-head">
-            <h2>Who Should Enroll ?</h2>
+        <div class="bento bento-who">
+          <div class="tile t-head c-lav">
+            <h2>Who Should Enroll?</h2>
+            <span class="t-art" aria-hidden="true"><i class="fa-solid fa-users"></i></span>
           </div>
-          <article class="card vm-item">
-            <div class="card-img" aria-hidden="true"></div>
-            <ul>
-              <li>2nd, 3rd and 4th year Students</li>
-              <li>Managers</li>
-              <li>Healthcare Workers</li>
-              <li>Healthcare Workers</li>
-
-            </ul>
-          </article>
+          <div class="tile t-a c-pink">
+            <span class="t-ico" aria-hidden="true"><i class="fa-solid fa-user-graduate"></i></span>
+            <h3>2nd, 3rd and 4th year Students</h3>
+          </div>
+          <div class="tile t-b c-cream">
+            <span class="t-ico" aria-hidden="true"><i class="fa-solid fa-user-tie"></i></span>
+            <h3>Managers</h3>
+          </div>
+          <div class="tile t-c c-mint">
+            <span class="t-ico" aria-hidden="true"><i class="fa-solid fa-user-nurse"></i></span>
+            <h3>Healthcare Workers</h3>
+          </div>
+          <div class="tile t-d c-peach">
+            <span class="t-ico" aria-hidden="true"><i class="fa-solid fa-user-nurse"></i></span>
+            <h3>Healthcare Workers</h3>
+          </div>
         </div>
+
+        <div class="bento bento-why">
+          <div class="tile t-head c-slate">
+            <h2>Why Should You Enroll?</h2>
+            <span class="t-art" aria-hidden="true"><i class="fa-solid fa-circle-question"></i></span>
       </div>
-      <div class="feed-col feed-events">
-        <div class="feed-inner">
-          <div class="feed-head">
-            <h2>Why should you enroll ?</h2>
+          <div class="tile t-a c-lav">
+            <span class="t-ico" aria-hidden="true"><i class="fa-solid fa-building-columns"></i></span>
+            <h3>IIT Bombay</h3>
+            <p>World-class faculty &amp; academic rigour</p>
           </div>
-          <article class="card vm-item">
-            <div class="card-img" aria-hidden="true"></div>
-            <ul>
-              <li>IIT Bombay
-                World-class faculty & academic rigour</li>
-              <li>Honeywell
-                Industry expertise & social impact</li>
-              <li>You
-                Future-ready sustainability skills</li>
-              <li>
-                Fully sponsored for eligible learners.
-              </li>
-            </ul>
-          </article>
+          <div class="tile t-b c-cream">
+            <span class="t-ico" aria-hidden="true"><i class="fa-solid fa-industry"></i></span>
+            <h3>Honeywell</h3>
+            <p>Industry expertise &amp; social impact</p>
+          </div>
+          <div class="tile t-c c-pink">
+            <span class="t-ico" aria-hidden="true"><i class="fa-solid fa-user-check"></i></span>
+            <h3>You</h3>
+            <p>Future-ready sustainability skills</p>
+          </div>
+          <div class="tile t-d c-mint">
+            <span class="t-ico" aria-hidden="true"><i class="fa-solid fa-hand-holding-heart"></i></span>
+            <h3>Fully sponsored for eligible learners.</h3>
+          </div>
         </div>
-
-
 
       </div>
     </section>
 
 
-    <section class="container about-wrap">
+    <section class="container about-wrap" id="courses">
       <div class="about-card">
         <h2>Core Learning Areas</h2>
         <p>Every learner builds a strong foundation through three essential core courses before choosing their
@@ -171,57 +181,48 @@
     </section>
 
 
-    <section class="focus" aria-label="Focus areas">
+    <!-- 4. Register now -->
+    <section class="register container" id="register" aria-labelledby="register-title">
+      <div class="rg-card">
 
-<h2>Shape a Sustainable Future — Starting Today</h2>
-
-
+        <div class="rg-copy">
+          <h2 id="register-title">Shape a Sustainable Future — Starting Today</h2>
 <p>The initiative removes financial barriers through fully sponsored learning opportunities, empowering learners to apply sustainability knowledge wherever they live, learn, and work. Limited seats are available. Join thousands of learners building the skills India needs for a sustainable tomorrow. Register now for the fully sponsored Certificate Programme in Sustainability by IIT Bombay.</p>
-
-      <div class="container stage">
-        <div class="blob b1" aria-hidden="true"></div>
-        <div class="blob b2" aria-hidden="true"></div>
-        <div class="blob b3" aria-hidden="true"></div>
-        <div class="blob b4" aria-hidden="true"></div>
-        <div class="blob b5" aria-hidden="true"></div>
-
-        <div class="research">
-          <div class="research-icon" aria-hidden="true"></div>
-          <h2>Programme value</h2>
-          <h2 class="research-sub"><s>      ₹50,000</s> </h2>
-          <h2>Fully Sponsored
-</h2>
         </div>
 
-        <div class="area a-edu">
+        <div class="rg-art">
+          <div class="rg-note rg-note-1" aria-hidden="true"><span class="rg-tick"><i class="fa-solid fa-check"></i></span><b>Fully sponsored</b></div>
+          <div class="rg-note rg-note-2" aria-hidden="true"><span class="rg-tick"><i class="fa-solid fa-check"></i></span><b>Limited seats</b></div>
+
+          <!-- FORM PLACEHOLDER: replace the <form> below with your registration form or embed -->
+          <div class="rg-window">
+            <div class="rg-bar" aria-hidden="true"><i></i><i></i><i></i></div>
+            <form class="rg-form" id="register-form" onsubmit="return false">
           <h3>Register Now</h3>
+              <label>Full name<input type="text" placeholder="Your name"></label>
+              <label>Email<input type="email" placeholder="you@example.com"></label>
+              <label>Mobile<input type="tel" placeholder="Mobile number"></label>
+              <button class="rg-submit" type="submit">Register now</button>
+            </form>
+          </div>
+          <svg class="rg-cursor" viewBox="0 0 24 24" width="44" height="44" aria-hidden="true"><path d="M3 2l17 9-7.5 2L9 20.5z" fill="#14201a"/></svg>
         </div>
-        <div class="area a-assess">
-          <h3>View Courses</h3>
+
+        <div class="rg-band">
+          <div class="rg-value">
+            <span class="rg-value-label">Programme value</span>
+            <s>₹50,000</s>
+            <strong>Fully Sponsored</strong>
+          </div>
+          <div class="rg-courses">
+            <a class="rg-btn" href="#courses">View Courses</a>
           <ul>
             <li>Industry</li>
             <li>Academia</li>
           </ul>
         </div>
-        <div class="area a-entre">
-          <h3>Entrepreneurship</h3>
         </div>
-        <div class="area a-campus">
-          <h3>Campus Sustainability</h3>
-          <ul>
-            <li>IITB</li>
-            <li>Other Campus</li>
-          </ul>
-        </div>
-        <div class="area a-outreach">
-          <h3>Outreach</h3>
-          <ul>
-            <li>Roundtables</li>
-            <li>Seminars / Webinars</li>
-            <li>Symposium / Conclave / conference / Expos</li>
-            <li>Industry Affiliation Program</li>
-          </ul>
-        </div>
+
       </div>
     </section>
 
@@ -233,47 +234,41 @@
   </main>
 
 
-  <footer class="site-footer">
-    <div class="container footer-grid">
-      <div class="footer-about">
-        <div class="footer-brand"><span class="logo-mark" aria-hidden="true"></span><span><small>IIT Bombay Reseach Hub
-              for<br><b>Green Energy &amp; Sustainability</b></small><strong>IHCFSI</strong></span></div>
-        <address>IIT-Bombay Honeywell COE for Future Skills and Innovation, 6th Floor, DSSE Building, Near Central
-          Library, Behind Main Building,<br>IIT Bombay, Powai<br>Mumbai 400076 Maharashtra INDIA.</address>
-        <p>9122 2576 5251 &nbsp;|&nbsp; <a href="mailto:office.ihcfsi@iitb.ac.in">office.ihcfsi@iitb.ac.in</a></p>
-        <p><a href="#">&#9873; View Location on Map</a></p>
-        <ul class="social">
-          <li><a href="#" aria-label="LinkedIn">in</a></li>
-          <li><a href="#" aria-label="YouTube">&#9654;</a></li>
-          <li><a href="#" aria-label="Instagram">&#9711;</a></li>
-          <li><a href="#" aria-label="Facebook">f</a></li>
-          <li><a href="#" aria-label="X">X</a></li>
-        </ul>
-        <p class="copy">&copy; 2026. IIT Bombay Research Hub for Green Energy and Sustainability. All rights reserved.
-        </p>
-      </div>
-      <div class="quick">
-        <h3>Quick Links</h3>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="education.html">Training and Education</a></li>
-          <li><a href="events.html">Events</a></li>
-          <li><a href="#">Sitemap</a></li>
-        </ul>
-      </div>
-      <form class="write" onsubmit="return false">
-        <h3>Write to us</h3>
-        <input type="text" placeholder="Name" aria-label="Name">
-        <input type="email" placeholder="Email" aria-label="Email">
-        <textarea placeholder="Comments" aria-label="Comments" rows="3"></textarea>
-        <div class="captcha-row"><span class="captcha" aria-hidden="true">j S H u s F</span><input type="text"
-            placeholder="Captcha" aria-label="Captcha"></div>
-        <a href="#" class="reload">Reload Captcha</a>
-        <button class="btn" type="submit">Submit</button>
-      </form>
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div class="footer-about">
+      <a class="footer-brand" href="index.html" aria-label="IHCFSI home"><span class="footer-honeywell-wrap" aria-hidden="true"><img class="footer-honeywell" src="/assets/honeywell_logo.svg" alt=""></span><span class="footer-brand-name"></span><span class="footer-brand-divider" aria-hidden="true"></span><span class="footer-iitb-wrap" aria-hidden="true"><img class="footer-iitb" src="/assets/IITB_logo.png" alt=""></span></a>
+      <address>IIT Bombay–Honeywell CoE for Future Skills and Innovation, 6th Floor, DSSE Building, Near Central Library, Behind Main Building,<br>IIT Bombay, Powai<br>Mumbai 400076 Maharashtra INDIA.</address>
+      <p>9122 2576 5251  &nbsp;|&nbsp; <a href="mailto:office.ihcfsi@iitb.ac.in">office.ihcfsi@iitb.ac.in</a></p>
+      <p><a href="#">&#9873; View Location on Map</a></p>
+      <ul class="social">
+        <li><a href="#" aria-label="LinkedIn">in</a></li>
+        <li><a href="#" aria-label="YouTube">&#9654;</a></li>
+        <li><a href="#" aria-label="Instagram">&#9711;</a></li>
+        <li><a href="#" aria-label="Facebook">f</a></li>
+        <li><a href="#" aria-label="X">X</a></li>
+      </ul>
+      <p class="copy">&copy; 2026. IIT Bombay–Honeywell CoE for Future Skills and Innovation.</p> <p class="copy">All rights reserved.</p>
     </div>
-  </footer>
+    <div class="quick">
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="education.html">Education & Training</a></li>
+        <li><a href="events.html">Events</a></li>
+        <li><a href="sitemap.html">Sitemap</a></li>
+      </ul>
+    </div>
+    <form class="write" onsubmit="return false">
+      <h3>Write to us</h3>
+      <input type="text" placeholder="Name" aria-label="Name">
+      <input type="email" placeholder="Email" aria-label="Email">
+      <textarea placeholder="Comments" aria-label="Comments" rows="3"></textarea>
+      <div class="captcha-row"><span class="captcha" aria-hidden="true">j S H u s F</span><input type="text" placeholder="Captcha" aria-label="Captcha"></div>
+      <a href="#" class="reload">Reload Captcha</a>
+      <button class="btn" type="submit">Submit</button>
+    </form>
+  </div>
+</footer>
 
 </body>
 

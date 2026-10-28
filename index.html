@@ -5,21 +5,27 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>IHCFSI – Driving research, education and collaboration in sustainability</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Mukta:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="index.css">
 </head>
 <body>
 
 <header class="site-header">
   <div class="container header-inner">
-    <a class="brand" href="#" aria-label="IHCFSI home">
+    <a class="brand" href="index.html" aria-label="IHCFSI home">
       <span class="logo-mark" aria-hidden="true"><img src="/assets/honeywell_logo.svg"></span>
       <span class="brand-divider"></span>
       <span class="iitb-seal" aria-hidden="true"><img src="/assets/IITB_logo.png"></span>
     </a>
     <div class="header-right">
       <nav class="main-nav" aria-label="Main">
-        <a href="about.html" class="caret">About</a>
+        <div class="nav-dropdown">
+          <a href="about.html" class="caret" aria-haspopup="true">About</a>
+          <ul class="dropdown-menu">
+            <li><a href="about.html#center">Center</a></li>
+            <li><a href="team.html">Team</a></li>
+          </ul>
+        </div>
         <a href="education.html">Education & Training</a>
         <a href="events.html">Events</a>
       </nav>
@@ -122,7 +128,7 @@
   <section class="feed">
     <div class="feed-col feed-news" id="news">
       <div class="feed-inner">
-        <div class="feed-head"><h2>News</h2><div class="arrows"><button aria-label="Previous news">&#8249;</button><button aria-label="Next news">&#8250;</button></div></div>
+        <div class="feed-head"><h2>News</h2></div>
         <div class="cards">
           <article class="card">
             <div class="card-img img-award"></div>
@@ -142,7 +148,7 @@
     </div>
     <div class="feed-col feed-events" id="events">
       <div class="feed-inner">
-        <div class="feed-head"><h2>Events</h2><div class="arrows"><button aria-label="Previous event">&#8249;</button><button aria-label="Next event">&#8250;</button></div></div>
+        <div class="feed-head"><h2>Events</h2></div>
         <div class="cards">
           <article class="card">
             <div class="card-img img-programme"></div>
@@ -189,8 +195,8 @@
 <footer class="site-footer">
   <div class="container footer-grid">
     <div class="footer-about">
-      <div class="footer-brand"><span class="logo-mark" aria-hidden="true"></span><span><small>IIT Bombay Reseach Hub for<br><b>Green Energy &amp; Sustainability</b></small><strong>IHCFSI</strong></span></div>
-      <address>IIT-Bombay Honeywell COE for Future Skills and Innovation, 6th Floor, DSSE Building, Near Central Library, Behind Main Building,<br>IIT Bombay, Powai<br>Mumbai 400076 Maharashtra INDIA.</address>
+      <a class="footer-brand" href="index.html" aria-label="IHCFSI home"><span class="footer-honeywell-wrap" aria-hidden="true"><img class="footer-honeywell" src="/assets/honeywell_logo.svg" alt=""></span><span class="footer-brand-name"></span><span class="footer-brand-divider" aria-hidden="true"></span><span class="footer-iitb-wrap" aria-hidden="true"><img class="footer-iitb" src="/assets/IITB_logo.png" alt=""></span></a>
+      <address>IIT Bombay–Honeywell CoE for Future Skills and Innovation, 6th Floor, DSSE Building, Near Central Library, Behind Main Building,<br>IIT Bombay, Powai<br>Mumbai 400076 Maharashtra INDIA.</address>
       <p>9122 2576 5251  &nbsp;|&nbsp; <a href="mailto:office.ihcfsi@iitb.ac.in">office.ihcfsi@iitb.ac.in</a></p>
       <p><a href="#">&#9873; View Location on Map</a></p>
       <ul class="social">
@@ -200,14 +206,14 @@
         <li><a href="#" aria-label="Facebook">f</a></li>
         <li><a href="#" aria-label="X">X</a></li>
       </ul>
-      <p class="copy">&copy; 2026. IIT Bombay Research Hub for Green Energy and Sustainability. All rights reserved.</p>
+      <p class="copy">&copy; 2026. IIT Bombay–Honeywell CoE for Future Skills and Innovation.</p> <p class="copy">All rights reserved.</p>
     </div>
     <div class="quick">
       <h3>Quick Links</h3>
       <ul>
-        <li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="education.html">Training and Education</a></li>
+        <li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="education.html">Education & Training</a></li>
         <li><a href="events.html">Events</a></li>
-        <li><a href="#">Sitemap</a></li>
+        <li><a href="sitemap.html">Sitemap</a></li>
       </ul>
     </div>
     <form class="write" onsubmit="return false">
