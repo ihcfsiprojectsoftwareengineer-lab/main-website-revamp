@@ -20,7 +20,7 @@
   "settings": { "detailsPage": "event_details.html" },
 
   "types": {
-    "hackathon": "Hackathons & Challenges",
+    "hackathon": "Hackathon",
     "workshop": "Workshop",
     "certificate": "Certificate Courses",
     "fellowship": "Living Lab Fellowship",
@@ -30,9 +30,9 @@
 
   "events": [
     {
-      "id": "atomic-hack-india-2026",
+      "id": "Sustainability-Hackathon-2026",
       "type": "hackathon",
-      "title": "Atomic Hack India 2026",
+      "title": "Sustainability Hackathon 2026",
       "startDate": "2026-12-04",
       "endDate": "2026-12-06",
       "venue": "IIT Bombay",
@@ -92,61 +92,19 @@
       ],
       "details": {}
     },
+
     {
-      "id": "global-sustainability-challenge-2026-27",
-      "type": "hackathon",
-      "title": "Global Sustainability Challenge 2026-2027",
-      "startDate": "2026-10-01",
+      "id": "campus-sustainability-awareness-nss",
+      "type": "workshop",
+      "title": "Campus Sustainability Awareness Session with NSS",
+      "startDate": "2026-10-07",
       "venue": "IIT Bombay",
-      "videoUrl": "#",
-      "details": {}
-    },
-    {
-      "id": "sustainability-leadership-and-practice",
-      "type": "certificate",
-      "title": "Sustainability Leadership and Practice",
-      "startDate": "2026-09-07",
-      "endDate": "2027-09-06",
-      "venue": "Live Online + Campus Immersion",
-      "details": {}
-    },
-    {
-      "id": "living-lab-fellowship-cohort-3",
-      "type": "fellowship",
-      "title": "IHCFSI Living Lab Fellowship Cohort - III",
-      "startDate": "2026-08-01",
-      "endDate": "2027-05-05",
-      "venue": "IIT Bombay",
-      "linkUrl": "#",
-      "videoUrl": "#",
-      "details": {}
-    },
-    {
-      "id": "accelerating-clean-energy-ace",
-      "type": "conference",
-      "title": "Accelerating Clean Energy (ACE)",
-      "startDate": "2026-06-23",
-      "endDate": "2026-06-24",
-      "venue": "IIT Bombay",
-      "details": {}
-    },
-    {
-      "id": "india-nuclear-energy-forum-2026",
-      "type": "conference",
-      "title": "INDIA NUCLEAR ENERGY FORUM 2026",
-      "startDate": "2026-05-29",
-      "endDate": "2026-05-30",
-      "venue": "IIT Bombay",
-      "details": {}
-    },
-    {
-      "id": "nuclear-power-plant-simulators-training",
-      "type": "training",
-      "title": "3 Day Training Programme on Simulators for Nuclear Power Plants",
-      "startDate": "2026-04-15",
-      "endDate": "2026-04-17",
-      "venue": "IIT Bombay",
-      "brochureUrl": "#",
+      "gallery": [
+        { "src": "assets/events/campus-nss/1.svg", "caption": "Sample photo 1 – replace with a real image" },
+        { "src": "assets/events/campus-nss/2.svg", "caption": "Sample photo 2" },
+        { "src": "assets/events/campus-nss/3.svg", "caption": "Sample photo 3" },
+        { "src": "assets/events/campus-nss/4.svg", "caption": "Sample photo 4" }
+      ],
       "details": {}
     }
   ]
