@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Details - IHCFSI</title>
+    <!-- Mukta Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="index.css">
+        <link rel="stylesheet" href="events.css">
+
+    <script src="index.js" defer></script>
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header class="container">
+        <nav>
+            <a href="index.html" class="logo">
+                <img src="/assets/honeywell_logo.svg" alt="Honeywell Logo">
+                <span class="logo-separator"></span>
+                <img src="/assets/IITB_logo.png" alt="IITB Logo">
+            </a>
+            
+            <ul class="nav-links">
+                <li class="nav-item dropdown">
+                    <a href="javascript:void(0)" class="nav-link about-btn">About Us</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="center.html">Center</a></li>
+                        <li><a href="team.html">Team</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item"><a href="education.html" class="nav-link">Education</a></li>
+                <li class="nav-item"><a href="events.html" class="nav-link">Events</a></li>
+            </ul>
+
+            <div class="header-actions">
+                <a href="contact.html" class="contact-btn">Contact Us</a>
+                <button class="theme-toggle-btn" id="themeToggle" title="Toggle Light/Dark Mode">
+                    <i class="fa-solid fa-moon" id="themeIcon"></i>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Details View Container -->
+    <main class="container detail-page-content">
+        <!-- Top Nav Back Bar -->
+        <div class="detail-top-bar">
+            <a href="events.html" class="back-btn"><i class="fa-solid fa-chevron-left"></i> Back</a>
+        </div>
+
+        <!-- Hero Card Header Banner -->
+        <div class="detail-hero-card" id="detailHeroCard">
+            <div class="detail-hero-img-placeholder" id="heroImgBox">
+                <!-- Image loaded dynamically -->
+            </div>
+            <div class="detail-hero-text">
+                <h1 id="eventTitle">Loading Event...</h1>
+                <div class="event-meta-info" id="eventMeta">
+                    <span><i class="fa-regular fa-calendar"></i> <span id="eventDates">--</span></span>
+                    <span><i class="fa-solid fa-location-dot"></i> <span id="eventVenue">--</span></span>
+                </div>
+                <a href="#" id="registerBtn" class="register-pill-btn" style="display:none;">Register now</a>
+            </div>
+        </div>
+
+        <!-- Content Layout Grid -->
+        <div class="detail-content-grid">
+            <!-- Left Column: Main Description Sections -->
+            <div class="detail-main-col" id="mainSectionsCol">
+                <!-- Loaded dynamically -->
+            </div>
+
+            <!-- Right Column: Sidebar Info & Contacts -->
+            <div class="detail-sidebar-col" id="sidebarCol">
+                <div class="sidebar-card">
+                    <h3>Information</h3>
+                    <p><i class="fa-regular fa-calendar"></i> <span id="sidebarDates">--</span></p>
+                    <p><i class="fa-solid fa-location-dot"></i> <span id="sidebarVenue">--</span></p>
+                    <div id="sidebarRegisterContainer"></div>
+                    <hr class="sidebar-divider">
+                    <div id="sidebarFeesContainer">
+                        <strong>Fees:</strong> <span id="sidebarFees">Free of Cost</span>
+                    </div>
+                </div>
+
+                <div class="sidebar-card" id="contactsSidebarCard">
+                    <h3>Contact details</h3>
+                    <div id="sidebarContactsList">
+                        <!-- Loaded dynamically -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Breadcrumb Navigation -->
+    <nav class="breadcrumb-container" aria-label="Breadcrumb">
+        <div class="container">
+            <ol class="breadcrumb-list">
+                <li><a href="index.html">Home</a></li>
+                <li class="separator">/</li>
+                <li><a href="events.html">Events</a></li>
+                <li class="separator">/</li>
+                <li class="active-crumb" id="breadcrumbEventTitle">Event Details</li>
+            </ol>
+        </div>
+    </nav>
+
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-left">
+                <div class="footer-brand">
+                    <span>IIT Bombay Honeywell</span>
+                    <span>Centre of Excellence for Future Skills & Innovation</span>
+                </div>
+                <div class="footer-subtitle">
+                    Get the latest updates, harvest news, and special offers directly to your inbox.
+                </div>
+                <form class="subscribe-form" onsubmit="event.preventDefault();">
+                    <input type="email" placeholder="youremail@mail.com" required>
+                    <button type="submit">Send</button>
+                </form>
+
+                <div class="social-icons">
+                    <a href="#" class="social-btn"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" class="social-btn"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#" class="social-btn"><i class="fa-regular fa-envelope"></i></a>
+                    <a href="#" class="social-btn"><i class="fa-solid fa-phone"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-right">
+                <a href="#" class="back-to-top">Back to Top <i class="fa-solid fa-arrow-up"></i></a>
+                <ul class="footer-nav">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Product</a></li>
+                    <li><a href="#">Blogs</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+                <div class="footer-legal">
+                    <a href="#">Privacy and Policy</a>
+                    <a href="#">Term and Condition</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", async () => {
+            const urlParams = new URLSearchParams(window.location.search);
+            const eventId = urlParams.get('id');
+
+            try {
+                const response = await fetch('events.json');
+                const data = await response.json();
+                const event = data.events.find(e => e.id === eventId);
+
+                if (!event) {
+                    document.getElementById('eventTitle').innerText = "Event Not Found";
+                    return;
+                }
+
+                // Populate Header Card
+                document.getElementById('eventTitle').innerText = event.title;
+                const dateStr = event.endDate ? `${event.startDate} to ${event.endDate}` : event.startDate;
+                document.getElementById('eventDates').innerText = dateStr;
+                document.getElementById('sidebarDates').innerText = dateStr;
+                document.getElementById('eventVenue').innerText = event.venue || 'IIT Bombay';
+                document.getElementById('sidebarVenue').innerText = event.venue || 'IIT Bombay';
+
+                if (event.image) {
+                    document.getElementById('heroImgBox').innerHTML = `<img src="${event.image}" alt="${event.title}" style="width:100%; height:100%; object-fit:cover; border-radius:12px;">`;
+                }
+
+                if (event.registerUrl) {
+                    const regBtn = document.getElementById('registerBtn');
+                    regBtn.style.display = 'inline-block';
+                    regBtn.href = event.registerUrl;
+
+                    const sideRegContainer = document.getElementById('sidebarRegisterContainer');
+                    sideRegContainer.innerHTML = `<a href="${event.registerUrl}" class="sidebar-link-register">Click here to register</a>`;
+                }
+
+                if (event.fees) {
+                    document.getElementById('sidebarFees').innerText = event.fees;
+                }
+
+                // Populate Sections
+                const mainCol = document.getElementById('mainSectionsCol');
+                if (event.details && event.details.sections) {
+                    event.details.sections.forEach(sec => {
+                        let htmlContent = `<div class="content-section-box"><h2>${sec.heading}</h2>`;
+                        if (sec.paragraphs) {
+                            sec.paragraphs.forEach(p => {
+                                htmlContent += `<p>${p}</p>`;
+                            });
+                        }
+                        htmlContent += `</div>`;
+                        mainCol.innerHTML += htmlContent;
+                    });
+                }
+
+                // Populate Contacts in Sidebar
+                const contactsList = document.getElementById('sidebarContactsList');
+                if (event.details && event.details.contacts) {
+                    event.details.contacts.forEach(c => {
+                        contactsList.innerHTML += `
+                            <div class="contact-person-item">
+                                <p><strong>${c.name}</strong>, ${c.role}</p>
+                                <a href="mailto:${c.email}">${c.email}</a>
+                            </div>
+                        `;
+                    });
+                }
+
+            } catch (err) {
+                console.error("Error loading event details:", err);
+            }
+        });
+    </script>
+</body>
+</html>

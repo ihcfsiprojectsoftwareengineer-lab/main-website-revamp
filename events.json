@@ -22,17 +22,15 @@
   "types": {
     "hackathon": "Hackathon",
     "workshop": "Workshop",
-    "certificate": "Certificate Courses",
-    "fellowship": "Living Lab Fellowship",
-    "conference": "Conference",
-    "training": "Training Programme"
+    "outreach" : "Outreach",
+    "dialouge" : "Dialouge"
   },
 
   "events": [
     {
       "id": "Sustainability-Hackathon-2026",
       "type": "hackathon",
-      "title": "Sustainability Hackathon 2026",
+      "title": "Sustainability Hackathon 20267",
       "startDate": "2026-12-04",
       "endDate": "2026-12-06",
       "venue": "IIT Bombay",

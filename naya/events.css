@@ -1,0 +1,362 @@
+/* --- Events Page Styling --- */
+.page-content {
+    padding: 40px 0 60px;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.page-title {
+    font-size: 38px;
+    font-weight: 700;
+    color: var(--text-color);
+    margin-bottom: 5px;
+}
+
+.page-subtitle {
+    color: var(--text-muted);
+    font-size: 16px;
+}
+
+/* Filter Pill Switch Container (Design 1) */
+.filter-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 45px;
+}
+
+.filter-pill-switch {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    padding: 6px;
+    border-radius: 40px;
+    display: flex;
+    gap: 5px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.filter-btn {
+    background: transparent;
+    border: none;
+    padding: 10px 22px;
+    border-radius: 30px;
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--text-muted);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+.filter-btn:hover {
+    color: var(--text-color);
+}
+
+.filter-btn.active {
+    background-color: var(--text-color);
+    color: var(--bg-color);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Dark mode handling for active switch button */
+body.dark-mode .filter-btn.active {
+    background-color: #f8fafc;
+    color: #0f172a;
+}
+
+/* Events Grid Container (Design 2) */
+.events-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.event-card {
+    background-color: var(--card-bg);
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.event-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+.event-image-box {
+    width: 100%;
+    height: 220px;
+    overflow: hidden;
+}
+
+.event-image-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.event-card:hover .event-image-box img {
+    transform: scale(1.05);
+}
+
+.event-info {
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.event-action-badge {
+    width: 42px;
+    height: 42px;
+    background-color: var(--primary-color);
+    color: #ffffff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 16px;
+    flex-shrink: 0;
+    transition: opacity 0.3s;
+}
+
+.event-action-badge:hover {
+    opacity: 0.85;
+}
+
+.event-details h3 {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--text-color);
+    margin-bottom: 2px;
+    line-height: 1.2;
+}
+
+.event-year {
+    font-size: 13px;
+    color: var(--text-muted);
+}
+
+/* Responsive grid for smaller screens */
+@media (max-width: 992px) {
+    .events-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 650px) {
+    .events-grid {
+        grid-template-columns: 1fr;
+    }
+    .filter-pill-switch {
+        flex-wrap: wrap;
+        justify-content: center;
+        border-radius: 20px;
+    }
+}
+
+
+/* --- Event Card Action Badge & 45-degree Arrow --- */
+.event-info {
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.event-action-badge {
+    width: 42px;
+    height: 42px;
+    background-color: var(--primary-color);
+    color: #ffffff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 16px;
+    flex-shrink: 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* 45-Degree Angled Arrow pointing top-right */
+.event-action-badge i {
+    transform: rotate(-45deg);
+    transition: transform 0.3s ease;
+}
+
+.event-action-badge:hover i {
+    transform: rotate(0deg);
+}
+
+.event-action-badge:hover {
+    opacity: 0.85;
+}
+
+/* --- Detailed View Page Styling --- */
+.detail-page-content {
+    padding: 30px 0 60px;
+}
+
+.detail-top-bar {
+    margin-bottom: 25px;
+}
+
+.back-btn {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    color: var(--text-color);
+    padding: 8px 20px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.detail-hero-card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 24px;
+    padding: 30px;
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    margin-bottom: 40px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+}
+
+.detail-hero-img-placeholder {
+    width: 400px;
+    height: 260px;
+    background-color: var(--border-color);
+    border-radius: 12px;
+    flex-shrink: 0;
+    overflow: hidden;
+}
+
+.detail-hero-text h1 {
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--text-color);
+    margin-bottom: 12px;
+}
+
+.event-meta-info {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    color: var(--text-muted);
+    font-size: 15px;
+    margin-bottom: 20px;
+}
+
+.register-pill-btn {
+    background-color: var(--primary-color);
+    color: #ffffff;
+    padding: 10px 28px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    display: inline-block;
+}
+
+.detail-content-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 30px;
+}
+
+.content-section-box {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    padding: 30px;
+    margin-bottom: 25px;
+}
+
+.content-section-box h2 {
+    font-size: 22px;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+.content-section-box p {
+    color: var(--text-muted);
+    font-size: 15px;
+    line-height: 1.6;
+    margin-bottom: 12px;
+}
+
+.sidebar-card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    padding: 25px;
+    margin-bottom: 25px;
+}
+
+.sidebar-card h3 {
+    font-size: 18px;
+    margin-bottom: 15px;
+    color: var(--text-color);
+}
+
+.sidebar-card p {
+    color: var(--text-muted);
+    font-size: 14px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.sidebar-divider {
+    border: none;
+    border-top: 1px solid var(--border-color);
+    margin: 15px 0;
+}
+
+.sidebar-link-register {
+    color: var(--primary-color);
+    font-weight: 600;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.contact-person-item {
+    margin-bottom: 15px;
+}
+
+.contact-person-item p {
+    font-size: 13px;
+    margin-bottom: 2px;
+}
+
+.contact-person-item a {
+    color: var(--primary-color);
+    font-size: 13px;
+    text-decoration: none;
+}
+
+@media (max-width: 900px) {
+    .detail-hero-card {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .detail-hero-img-placeholder {
+        width: 100%;
+        height: 200px;
+    }
+    .detail-content-grid {
+        grid-template-columns: 1fr;
+    }
+}

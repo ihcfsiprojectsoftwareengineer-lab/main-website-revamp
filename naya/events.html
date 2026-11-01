@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events - IHCFSI</title>
+    <!-- Mukta Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="index.css">
+        <link rel="stylesheet" href="events.css">
+
+    <script src="index.js" defer></script>
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header class="container">
+        <nav>
+            <a href="index.html" class="logo">
+                <img src="/assets/honeywell_logo.svg" alt="Honeywell Logo">
+                <span class="logo-separator"></span>
+                <img src="/assets/IITB_logo.png" alt="IITB Logo">
+            </a>
+            
+            <ul class="nav-links">
+                <li class="nav-item dropdown">
+                    <a href="javascript:void(0)" class="nav-link about-btn">About Us</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="center.html">Center</a></li>
+                        <li><a href="team.html">Team</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item"><a href="education.html" class="nav-link">Education</a></li>
+                <li class="nav-item"><a href="events.html" class="nav-link" style="background-color: var(--primary-color); color: #fff !important;">Events</a></li>
+            </ul>
+
+            <div class="header-actions">
+                <a href="contact.html" class="contact-btn">Contact Us</a>
+                <button class="theme-toggle-btn" id="themeToggle" title="Toggle Light/Dark Mode">
+                    <i class="fa-solid fa-moon" id="themeIcon"></i>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content Container -->
+    <main class="container page-content">
+        <div class="section-header">
+            <h1 class="page-title">Our Events</h1>
+            <p class="page-subtitle">Explore our hackathons, workshops, outreach programs, and dialogue series.</p>
+        </div>
+
+        <!-- 4 Filter Tabs (Hackathons, Workshop, Outreach, Dialogue Series) -->
+        <div class="filter-container">
+            <div class="filter-pill-switch" id="filterTabs">
+                <button class="filter-btn active" data-filter="hackathon">Hackathons</button>
+                <button class="filter-btn" data-filter="workshop">Workshop</button>
+                <button class="filter-btn" data-filter="outreach">Outreach</button>
+                <button class="filter-btn" data-filter="dialouge">Dialogue Series</button>
+            </div>
+        </div>
+
+        <!-- Dynamic Events Grid -->
+        <div class="events-grid" id="eventsGrid">
+            <!-- Populated via JavaScript from events.json -->
+        </div>
+
+        <!-- Breadcrumb Navigation -->
+    <nav class="breadcrumb-container" aria-label="Breadcrumb">
+        <div class="container">
+            <ol class="breadcrumb-list">
+                <li><a href="index.html">Home</a></li>
+                <li class="separator">/</li>
+                <li><a href="#events">Events</a></li>
+            </ol>
+        </div>
+    </nav>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-left">
+                <div class="footer-brand">
+                    <span>IIT Bombay Honeywell</span>
+                    <span>Centre of Excellence for Future Skills & Innovation</span>
+                </div>
+                <div class="footer-subtitle">
+                    Get the latest updates, harvest news, and special offers directly to your inbox.
+                </div>
+                <form class="subscribe-form" onsubmit="event.preventDefault();">
+                    <input type="email" placeholder="youremail@mail.com" required>
+                    <button type="submit">Send</button>
+                </form>
+
+                <div class="social-icons">
+                    <a href="#" class="social-btn"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" class="social-btn"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#" class="social-btn"><i class="fa-regular fa-envelope"></i></a>
+                    <a href="#" class="social-btn"><i class="fa-solid fa-phone"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-right">
+                <a href="#" class="back-to-top">Back to Top <i class="fa-solid fa-arrow-up"></i></a>
+                <ul class="footer-nav">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Product</a></li>
+                    <li><a href="#">Blogs</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+                <div class="footer-legal">
+                    <a href="#">Privacy and Policy</a>
+                    <a href="#">Term and Condition</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", async () => {
+            try {
+                const response = await fetch('events.json');
+                const data = await response.json();
+                const eventsGrid = document.getElementById('eventsGrid');
+        const filterBtns = document.querySelectorAll('.filter-btn');
+
+                let currentFilter = 'hackathon';
+
+                function renderEvents(filterType) {
+                    eventsGrid.innerHTML = '';
+                    const filtered = data.events.filter(e => e.type === filterType);
+
+                    if (filtered.length === 0) {
+                        eventsGrid.innerHTML = '<p style="grid-column: 1/-1; text-align: center; color: var(--text-muted);">No events found in this category.</p>';
+                        return;
+                    }
+
+                    filtered.forEach(event => {
+                        const year = event.startDate ? event.startDate.split('-')[0] : '';
+                        const imgSrc = event.image || 'https://images.unsplash.com/photo-1509391365360-2e959784a276?auto=format&fit=crop&w=600&q=80';
+                        
+                        const card = document.createElement('div');
+                        card.className = 'event-card';
+                        card.innerHTML = `
+                            <div class="event-image-box">
+                                <img src="${imgSrc}" alt="${event.title}">
+                            </div>
+                            <div class="event-info">
+                                <div class="event-details">
+                                    <h3>${event.title}</h3>
+                                    <span class="event-year">${year}</span>
+                                </div>
+                                <a href="event_details.html?id=${event.id}" class="event-action-badge" title="View Details">
+                                    <i class="fa-solid fa-arrow-right"></i>
+                                </a>
+                            </div>
+                        `;
+                        eventsGrid.appendChild(card);
+                    });
+                }
+
+                // Initial load
+                renderEvents(currentFilter);
+
+                // Filter Click listeners
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                        currentFilter = btn.getAttribute('data-filter');
+                        renderEvents(currentFilter);
+                    });
+                });
+
+            } catch (err) {
+                console.error('Error loading events.json:', err);
+            }
+        });
+    </script>
+</body>
+</html>

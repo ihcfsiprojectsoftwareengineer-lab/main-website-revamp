@@ -1,0 +1,109 @@
+{
+  "_keys": {
+    "types": "key -> label shown on the tag and in the filter dropdown. A new type used by an event is added to the filter automatically.",
+    "id": "unique slug. Detail page URL is event-details.html?id=<id>",
+    "type": "one of the keys in 'types'",
+    "title / startDate / endDate / venue": "endDate is optional (YYYY-MM-DD)",
+    "image": "optional card + poster image. Placeholder is shown if missing",
+    "gallery": "optional list of {src, caption}. If present, the card gets a gallery button and the gallery opens on the same page (lightbox)",
+    "videoUrl / linkUrl / brochureUrl": "optional. Each adds a button on the card",
+    "registerUrl / fees": "optional. Shown on the detail page",
+    "details": "add this object to give the card a description page ('...' button). Leave it out for a card without one",
+    "detailsUrl": "optional. Overrides the automatic detail page link (for example an external URL)",
+    "details.subtitle": "optional list of lines under the title",
+    "details.sections": "list of {heading, paragraphs[], bullets[]}",
+    "details.faqs": "list of {q, a}",
+    "details.contacts": "list of {name, role, email, phone}",
+    "details.howToReach": "optional {venue, address, mapUrl}. Venue falls back to the event venue"
+  },
+
+  "settings": { "detailsPage": "event_details.html" },
+
+  "types": {
+    "hackathon": "Hackathon",
+    "workshop": "Workshop",
+    "outreach" : "Outreach",
+    "dialouge" : "Dialouge"
+  },
+
+  "events": [
+    {
+      "id": "Sustainability-Hackathon-2026",
+      "type": "hackathon",
+      "title": "Sustainability Hackathon 20267",
+      "startDate": "2026-12-04",
+      "endDate": "2026-12-06",
+      "venue": "IIT Bombay",
+      "image": "assets/events/atomic-hack-india-2026.jpg",
+      "registerUrl": "#",
+      "fees": "Free of Cost",
+      "details": {
+        "subtitle": [
+          "National Innovation Challenge in Nuclear Engineering & Digital Twins",
+          "Engineering the Future. Innovating for Impact. Building Tomorrow's Leaders."
+        ],
+        "sections": [
+          {
+            "heading": "About the Hackathon",
+            "paragraphs": [
+              "ATOMIC HACK INDIA 2026 is a premier national innovation challenge designed to bridge the gap between academic theory and industrial practice. Hosted at IIT Bombay, it invites students to solve engineering and technological case studies in nuclear energy, power engineering, digitalization of industrial facilities, digital twins, critical infrastructure and smart grids, using ROSATOM's professional REPEAT VISION modeling platform. Trial licenses are provided upon registration.",
+              "REPEAT VISION is a design, mathematical modeling and digital twin creation environment built for design and educational institutes, engineering bureaus and industrial companies.",
+              "Join us to innovate, collaborate and shape the future of India's energy sector alongside top experts from ROSATOM and IITB."
+            ]
+          },
+          {
+            "heading": "Background",
+            "paragraphs": [
+              "India's ambitious energy targets require a new generation of engineers skilled in simulation and digital twins. ATOMIC HACK INDIA connects academia with industry to foster practical innovation."
+            ]
+          }
+        ],
+        "faqs": [
+          { "q": "What is Atomic Hack?", "a": "Atomic Hack is a team competition for programmers and engineers to solve engineering and technological case studies in nuclear engineering, digital twins and critical infrastructure within a short timeframe." },
+          { "q": "Can I participate alone?", "a": "No. Teams of 3–4 people can take part. It's difficult for one person to cover all the competencies needed, but we can help you find a team." },
+          { "q": "I don't have a team. What should I do?", "a": "Join an existing team for the duration of the hackathon, or create your own, on our participant platform. The platform shows all available teams and people looking for a team." },
+          { "q": "Who can participate?", "a": "Any student who is 18 or older as of the registration start date. In some cases, participants aged 16–17 may take part with written consent from their legal representatives. We recommend including electrical power engineers in your team." },
+          { "q": "Do I need prior REPEAT VISION experience?", "a": "No. We provide introductory webinars and documentation before the hackathon starts." },
+          { "q": "What if my laptop isn't powerful enough?", "a": "REPEAT VISION runs on standard laptops and also has a cloud version hosted in India. No high-end hardware is required." },
+          { "q": "Can I use AI tools?", "a": "Yes. In your final presentation, you must clearly indicate which AI tools you used and for what purposes. You are responsible for independently explaining and defending all technical solutions." },
+          { "q": "Where will the hackathon take place?", "a": "At IIT Bombay." },
+          { "q": "What awaits participants at the venue?", "a": "Branded merchandise, prize draws, interaction with experienced mentors, experts and ROSATOM mentors, and an unforgettable atmosphere." }
+        ],
+        "contacts": [
+          { "name": "Ms. Jaya K", "role": "Senior Associate – Learning and Innovation, GESH IITB", "email": "30006497@iitb.ac.in" },
+          { "name": "Dr. Subrata Jana", "role": "Program Manager – Nuclear Engineering", "email": "30007722@iitb.ac.in" }
+        ],
+        "howToReach": { "venue": "IIT Bombay" }
+      }
+    },
+    {
+      "id": "campus-sustainability-awareness-nss",
+      "type": "workshop",
+      "title": "Campus Sustainability Awareness Session with NSS",
+      "startDate": "2026-10-07",
+      "venue": "IIT Bombay",
+      "gallery": [
+        { "src": "assets/events/campus-nss/1.svg", "caption": "Sample photo 1 – replace with a real image" },
+        { "src": "assets/events/campus-nss/2.svg", "caption": "Sample photo 2" },
+        { "src": "assets/events/campus-nss/3.svg", "caption": "Sample photo 3" },
+        { "src": "assets/events/campus-nss/4.svg", "caption": "Sample photo 4" }
+      ],
+      "details": {}
+    },
+
+    {
+      "id": "campus-sustainability-awareness-nss",
+      "type": "workshop",
+      "title": "Campus Sustainability Awareness Session with NSS",
+      "startDate": "2026-10-07",
+      "venue": "IIT Bombay",
+      "gallery": [
+        { "src": "assets/events/campus-nss/1.svg", "caption": "Sample photo 1 – replace with a real image" },
+        { "src": "assets/events/campus-nss/2.svg", "caption": "Sample photo 2" },
+        { "src": "assets/events/campus-nss/3.svg", "caption": "Sample photo 3" },
+        { "src": "assets/events/campus-nss/4.svg", "caption": "Sample photo 4" }
+      ],
+      "details": {}
+    }
+  ]
+}
