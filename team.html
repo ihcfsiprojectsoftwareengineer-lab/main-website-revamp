@@ -1,299 +1,317 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>IHCFSI – Members</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="index.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Core Team - IHCFSI</title>
+    <!-- Mukta Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="index.css">
+    <script src="index.js" defer></script>
+    <style>
+        /* --- Team Page Layout Styles (Matching Reference) --- */
+        .team-section {
+            margin: 40px 0 70px;
+        }
+
+        .section-header-box {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .section-header-box h1 {
+            font-size: 38px;
+            font-weight: 700;
+            color: var(--text-color);
+            margin-bottom: 5px;
+        }
+
+        .section-header-box p {
+            color: var(--text-muted);
+            font-size: 16px;
+        }
+
+        /* 4-Box Grid layout */
+        .team-grid-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+        }
+
+        /* Each Team Card Split Structure */
+        .team-split-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 28px;
+            overflow: hidden;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.04);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+        }
+
+        .team-split-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+        }
+
+        /* Left Image Box */
+        .team-img-box {
+            position: relative;
+            height: 100%;
+            min-height: 280px;
+        }
+
+        .team-img-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .team-tag-badge {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(6px);
+            color: #ffffff;
+            font-size: 11px;
+            font-weight: 600;
+            padding: 4px 12px;
+            border-radius: 20px;
+            letter-spacing: 0.5px;
+        }
+
+        /* Right Side Content Panel (Expands/Shows on Hover or Click) */
+        .team-info-panel {
+            padding: 30px 25px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            background-color: #f4f7f6;
+            transition: background-color 0.3s ease;
+        }
+
+        body.dark-mode .team-info-panel {
+            background-color: #1a2638;
+        }
+
+        .team-info-panel h3 {
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--text-color);
+            margin-bottom: 4px;
+            line-height: 1.2;
+        }
+
+        .team-role {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+
+        .team-bio {
+            font-size: 13.5px;
+            color: var(--text-muted);
+            line-height: 1.5;
+            margin-bottom: 20px;
+        }
+
+        .team-contact-link {
+            font-size: 13px;
+            color: var(--text-color);
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 600;
+        }
+
+        .team-contact-link i {
+            color: var(--primary-color);
+        }
+
+        .team-contact-link:hover {
+            color: var(--primary-color);
+        }
+
+        @media (max-width: 992px) {
+            .team-grid-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 550px) {
+            .team-split-card {
+                grid-template-columns: 1fr;
+            }
+            .team-img-box {
+                height: 240px;
+            }
+        }
+    </style>
 </head>
 <body>
 
-<header class="site-header">
-  <div class="container header-inner">
-    <a class="brand" href="index.html" aria-label="IHCFSI home">
-      <span class="logo-mark" aria-hidden="true"><img src="/assets/honeywell_logo.svg"></span>
-      <span class="brand-name">IHCFSI</span>
-      <span class="brand-divider"></span>
-      <span class="iitb-seal" aria-hidden="true"><img src="/assets/IITB_logo.png"></span>
-    </a>
-    <div class="header-right">
- <nav class="main-nav" aria-label="Main">
-        <a href="about.html" class="caret">About</a>
-        <a href="education.html">Education & Training</a>
-        <a href="events.html">Events</a>
-      </nav>
-    </div>
-  </div>
-</header>
+    <!-- Header Navigation -->
+    <header class="container">
+        <nav>
+            <a href="index.html" class="logo">
+                <img src="/assets/honeywell_logo.svg" alt="Honeywell Logo">
+                <span class="logo-separator"></span>
+                <img src="/assets/IITB_logo.png" alt="IITB Logo">
+            </a>
+            
+            <ul class="nav-links">
+                <li class="nav-item dropdown">
+                    <a href="javascript:void(0)" class="nav-link about-btn">About Us</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="center.html">Center</a></li>
+                        <li><a href="team.html" style="background-color: var(--secondary-color); color: #1a1a1a;">Team</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item"><a href="education.html" class="nav-link">Education</a></li>
+                <li class="nav-item"><a href="events.html" class="nav-link">Events</a></li>
+            </ul>
 
-<main class="container members-page">
+            <div class="header-actions">
+                <a href="contact.html" class="contact-btn">Contact Us</a>
+                <button class="theme-toggle-btn" id="themeToggle" title="Toggle Light/Dark Mode">
+                    <i class="fa-solid fa-moon" id="themeIcon"></i>
+                </button>
+            </div>
+        </nav>
+    </header>
 
-<h2>Core Members</h2>
- <h1 class="sr-only">Members</h1>
-  <ul class="members">
-      <li class="member">
-        <div class="member-photo" aria-hidden="true"></div>
-        <div class="member-info">
-          <h2>Prof. Devang Khakhar (Chair)</h2>
-          <p>Former Director, IIT Bombay</p>
-          <div class="member-actions"><a class="btn" href="#">Read More</a></div>
-        </div>
-      </li>
-      <li class="member">
-        <div class="member-photo" aria-hidden="true"></div>
-        <div class="member-info">
-          <h2>Mr. Ashish Goel</h2>
-          <p>President, InTech Energy DBA Sanalife</p>
-          <div class="member-actions"><a class="social-btn" href="#" aria-label="Mr. Ashish Goel on LinkedIn">in</a></div>
-        </div>
-      </li>
-      <li class="member">
-        <div class="member-photo" aria-hidden="true"></div>
-        <div class="member-info">
-          <h2>Dr. Arun Majumdar</h2>
-          <p>Dean, Stanford Doerr School of Sustainability</p>
-          <div class="member-actions"><a class="btn" href="#">Read More</a></div>
-        </div>
-      </li>
-      <li class="member">
-        <div class="member-photo" aria-hidden="true"></div>
-        <div class="member-info">
-          <h2>Prof. Vijayamohanan K Pillai</h2>
-          <p>Dean-R&amp;D, IISER Tirupati</p>
-          <div class="member-actions"><a class="btn" href="#">Read More</a></div>
-        </div>
-      </li>
-      <li class="member">
-        <div class="member-photo" aria-hidden="true"></div>
-        <div class="member-info">
-          <h2>Dr. Mritunjay Chaubey</h2>
-          <p>Former Chief Sustainability Officer, UPL Limited.</p>
-          <div class="member-actions"><a class="social-btn" href="#" aria-label="Dr. Mritunjay Chaubey on LinkedIn">in</a><a class="btn" href="#">Read More</a></div>
-        </div>
-      </li>
-      <li class="member">
-        <div class="member-photo" aria-hidden="true"></div>
-        <div class="member-info">
-          <h2>Prof. Satish Agnihotri</h2>
-          <p>Policy Studies/ CTARA, IIT Bombay</p>
-          <div class="member-actions"><a class="btn" href="#">Read More</a></div>
-        </div>
-      </li>
-      <li class="member">
-        <div class="member-photo" aria-hidden="true"></div>
-        <div class="member-info">
-          <h2>Prof. Milind Atrey</h2>
-          <p>Deputy Director - ART IIT Bombay</p>
-          <div class="member-actions"><a class="btn" href="#">Read More</a></div>
-        </div>
-      </li>
-      <li class="member">
-        <div class="member-photo" aria-hidden="true"></div>
-        <div class="member-info">
-          <h2>Prof. Upendra Bhandarkar</h2>
-          <p>Dean ACR IITB</p>
-          <div class="member-actions"><a class="btn" href="#">Read More</a></div>
-        </div>
-      </li>
-  </ul>
+    <!-- Main Content -->
+    <main class="container">
 
+        <!-- Breadcrumb Navigation -->
+        <nav class="breadcrumb-container" aria-label="Breadcrumb">
+            <ol class="breadcrumb-list">
+                <li><a href="index.html">Home</a></li>
+                <li class="separator">/</li>
+                <li class="active-crumb">Core Team</li>
+            </ol>
+        </nav>
 
+        <!-- Team Section -->
+        <section class="team-section">
+            <div class="section-header-box">
+                <h1>Meet Our Core Team</h1>
+                <p>Leadership, research management, and technical experts guiding the Centre of Excellence.</p>
+            </div>
 
-<h2>Advisory Committee</h2>
+            <!-- 4 Grid Boxes -->
+            <div class="team-grid-container">
+                
+                <!-- Team Member 1 -->
+                <div class="team-split-card">
+                    <div class="team-img-box">
+                        <span class="team-tag-badge">CORE LEADERSHIP</span>
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=600&q=80" alt="Dr. Alok Sharma">
+                    </div>
+                    <div class="team-info-panel">
+                        <h3>Dr. Alok Sharma</h3>
+                        <div class="team-role">Faculty Coordinator</div>
+                        <p class="team-bio">Leading strategic research initiatives, clean energy partnerships, and academic curriculum oversight at IIT Bombay.</p>
+                        <a href="mailto:alok.sharma@iitb.ac.in" class="team-contact-link"><i class="fa-regular fa-envelope"></i> alok.sharma@iitb.ac.in</a>
+                    </div>
+                </div>
 
-  <h1 class="sr-only">Members</h1>
-  <ul class="members">
-      <li class="member">
-        <div class="member-photo" aria-hidden="true"></div>
-        <div class="member-info">
-          <h2>Prof. Devang Khakhar (Chair)</h2>
-          <p>Former Director, IIT Bombay</p>
-          <div class="member-actions"><a class="btn" href="#">Read More</a></div>
-        </div>
-      </li>
-      <li class="member">
-        <div class="member-photo" aria-hidden="true"></div>
-        <div class="member-info">
-          <h2>Mr. Ashish Goel</h2>
-          <p>President, InTech Energy DBA Sanalife</p>
-          <div class="member-actions"><a class="social-btn" href="#" aria-label="Mr. Ashish Goel on LinkedIn">in</a></div>
-        </div>
-      </li>
-      <li class="member">
-        <div class="member-photo" aria-hidden="true"></div>
-        <div class="member-info">
-          <h2>Dr. Arun Majumdar</h2>
-          <p>Dean, Stanford Doerr School of Sustainability</p>
-          <div class="member-actions"><a class="btn" href="#">Read More</a></div>
-        </div>
-      </li>
-      <li class="member">
-        <div class="member-photo" aria-hidden="true"></div>
-        <div class="member-info">
-          <h2>Prof. Vijayamohanan K Pillai</h2>
-          <p>Dean-R&amp;D, IISER Tirupati</p>
-          <div class="member-actions"><a class="btn" href="#">Read More</a></div>
-        </div>
-      </li>
-      <li class="member">
-        <div class="member-photo" aria-hidden="true"></div>
-        <div class="member-info">
-          <h2>Dr. Mritunjay Chaubey</h2>
-          <p>Former Chief Sustainability Officer, UPL Limited.</p>
-          <div class="member-actions"><a class="social-btn" href="#" aria-label="Dr. Mritunjay Chaubey on LinkedIn">in</a><a class="btn" href="#">Read More</a></div>
-        </div>
-      </li>
-      <li class="member">
-        <div class="member-photo" aria-hidden="true"></div>
-        <div class="member-info">
-          <h2>Prof. Satish Agnihotri</h2>
-          <p>Policy Studies/ CTARA, IIT Bombay</p>
-          <div class="member-actions"><a class="btn" href="#">Read More</a></div>
-        </div>
-      </li>
-      <li class="member">
-        <div class="member-photo" aria-hidden="true"></div>
-        <div class="member-info">
-          <h2>Prof. Milind Atrey</h2>
-          <p>Deputy Director - ART IIT Bombay</p>
-          <div class="member-actions"><a class="btn" href="#">Read More</a></div>
-        </div>
-      </li>
-      <li class="member">
-        <div class="member-photo" aria-hidden="true"></div>
-        <div class="member-info">
-          <h2>Prof. Upendra Bhandarkar</h2>
-          <p>Dean ACR IITB</p>
-          <div class="member-actions"><a class="btn" href="#">Read More</a></div>
-        </div>
-      </li>
-  </ul>
+                <!-- Team Member 2 -->
+                <div class="team-split-card">
+                    <div class="team-img-box">
+                        <span class="team-tag-badge">INNOVATION</span>
+                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=600&q=80" alt="Ms. Jaya K">
+                    </div>
+                    <div class="team-info-panel">
+                        <h3>Ms. Jaya K</h3>
+                        <div class="team-role">Senior Associate – Learning & Innovation</div>
+                        <p class="team-bio">Managing skill development programs, hackathons, and multi-disciplinary industry training frameworks.</p>
+                        <a href="mailto:30006497@iitb.ac.in" class="team-contact-link"><i class="fa-regular fa-envelope"></i> 30006497@iitb.ac.in</a>
+                    </div>
+                </div>
 
+                <!-- Team Member 3 -->
+                <div class="team-split-card">
+                    <div class="team-img-box">
+                        <span class="team-tag-badge">TECHNICAL</span>
+                        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=600&q=80" alt="Dr. Subrata Jana">
+                    </div>
+                    <div class="team-info-panel">
+                        <h3>Dr. Subrata Jana</h3>
+                        <div class="team-role">Program Manager – Nuclear Engineering</div>
+                        <p class="team-bio">Spearheading digital twin simulations, thermodynamic modeling, and industrial infrastructure safety practices.</p>
+                        <a href="mailto:30007722@iitb.ac.in" class="team-contact-link"><i class="fa-regular fa-envelope"></i> 30007722@iitb.ac.in</a>
+                    </div>
+                </div>
 
+                <!-- Team Member 4 -->
+                <div class="team-split-card">
+                    <div class="team-img-box">
+                        <span class="team-tag-badge">OPERATIONS</span>
+                        <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=600&q=80" alt="Dr. Priya Menon">
+                    </div>
+                    <div class="team-info-panel">
+                        <h3>Dr. Priya Menon</h3>
+                        <div class="team-role">Research Fellow Coordinator</div>
+                        <p class="team-bio">Facilitating collaborative field research, fellowship grants, and community outreach engagements across sectors.</p>
+                        <a href="mailto:priya.menon@iitb.ac.in" class="team-contact-link"><i class="fa-regular fa-envelope"></i> priya.menon@iitb.ac.in</a>
+                    </div>
+                </div>
 
-<h2>Operations Team</h2>
+            </div>
+        </section>
 
-  <h1 class="sr-only">Members</h1>
-  <ul class="members">
-      <li class="member">
-        <div class="member-photo" aria-hidden="true"></div>
-        <div class="member-info">
-          <h2>Mr. Meghraj Garad</h2>
-          <p>Senior Project Manager</p>
-          <div class="member-actions"><a class="btn" href="#">Read More</a></div>
-        </div>
-      </li>
-      <li class="member">
-        <div class="member-photo" aria-hidden="true"></div>
-        <div class="member-info">
-          <h2>Ms. Jyoti Sharma</h2>
-          <p>Project Manager</p>
-          <div class="member-actions"><a class="social-btn" href="#" aria-label="Mr. Ashish Goel on LinkedIn">in</a></div>
-        </div>
-      </li>
-      <li class="member">
-        <div class="member-photo" aria-hidden="true"></div>
-        <div class="member-info">
-          <h2>Mr. Aniket Khedkar</h2>
-          <p>Assistant Project Manager</p>
-          <div class="member-actions"><a class="btn" href="#">Read More</a></div>
-        </div>
-      </li>
-      <li class="member">
-        <div class="member-photo" aria-hidden="true"></div>
-        <div class="member-info">
-          <h2>Ms. Gayatri Naik</h2>
-          <p>Assistant Project Manager</p>
-          <div class="member-actions"><a class="btn" href="#">Read More</a></div>
-        </div>
-      </li>
-      <li class="member">
-        <div class="member-photo" aria-hidden="true"></div>
-        <div class="member-info">
-          <h2>Mr. Vishnu Velukutty</h2>
-          <p>Project Software Engineer</p>
-          <div class="member-actions"><a class="social-btn" href="#" aria-label="Dr. Mritunjay Chaubey on LinkedIn">in</a><a class="btn" href="#">Read More</a></div>
-        </div>
-      </li>
-      <li class="member">
-        <div class="member-photo" aria-hidden="true"></div>
-        <div class="member-info">
-          <h2>Mr. Penchala Narasimhulu Damavarapu</h2>
-          <p>Project Research Associate</p>
-          <div class="member-actions"><a class="btn" href="#">Read More</a></div>
-        </div>
-      </li>
-      <li class="member">
-        <div class="member-photo" aria-hidden="true"></div>
-        <div class="member-info">
-          <h2>Pramila Tawade</h2>
-          <p>Senior Project Assistant</p>
-          <div class="member-actions"><a class="btn" href="#">Read More</a></div>
-        </div>
-      </li>
-      <li class="member">
-        <div class="member-photo" aria-hidden="true"></div>
-        <div class="member-info">
-          <h2>Monika Sangle</h2>
-          <p>Senior Project Assistant</p>
-          <div class="member-actions"><a class="btn" href="#">Read More</a></div>
-        </div>
-      </li>
-      <li class="member">
-        <div class="member-photo" aria-hidden="true"></div>
-        <div class="member-info">
-          <h2>Bhagyashri Bhubal</h2>
-          <p>Administrative Assistant</p>
-          <div class="member-actions"><a class="btn" href="#">Read More</a></div>
-        </div>
-      </li>
-  </ul>
+    </main>
 
-    <nav class="breadcrumb" aria-label="Breadcrumb"><a href="index.html">Home</a><span>/</span><span
-        aria-current="page">Team
-      </span></nav>
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-left">
+                <div class="footer-brand">
+                    <span>IIT Bombay Honeywell</span>
+                    <span>Centre of Excellence for Future Skills & Innovation </span>
+                </div>
+                <div class="footer-subtitle">
+                    Get the latest updates, news, and event updates directly to your inbox.
+                </div>
+                <form class="subscribe-form" onsubmit="event.preventDefault();">
+                    <input type="email" placeholder="youremail@mail.com" required>
+                    <button type="submit">Send</button>
+                </form>
 
-</main>
+                <div class="social-icons">
+                    <a href="#" class="social-btn"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" class="social-btn"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#" class="social-btn"><i class="fa-regular fa-envelope"></i></a>
+                    <a href="#" class="social-btn"><i class="fa-solid fa-phone"></i></a>
+                </div>
+            </div>
 
-<footer class="site-footer">
-  <div class="container footer-grid">
-    <div class="footer-about">
-      <div class="footer-brand"><span class="logo-mark" aria-hidden="true"></span><span><small>IIT Bombay Reseach Hub for<br><b>Green Energy &amp; Sustainability</b></small><strong>IHCFSI</strong></span></div>
-      <address>IIT-Bombay Honeywell COE for Future Skills and Innovation, 6th Floor, DSSE Building, Near Central Library, Behind Main Building,<br>IIT Bombay, Powai<br>Mumbai 400076 Maharashtra INDIA.</address>
-      <p>9122 2576 5251  &nbsp;|&nbsp; <a href="mailto:office.ihcfsi@iitb.ac.in">office.ihcfsi@iitb.ac.in</a></p>
-      <p><a href="#">&#9873; View Location on Map</a></p>
-      <ul class="social">
-        <li><a href="#" aria-label="LinkedIn">in</a></li>
-        <li><a href="#" aria-label="YouTube">&#9654;</a></li>
-        <li><a href="#" aria-label="Instagram">&#9711;</a></li>
-        <li><a href="#" aria-label="Facebook">f</a></li>
-        <li><a href="#" aria-label="X">X</a></li>
-      </ul>
-      <p class="copy">&copy; 2026. IIT Bombay Research Hub for Green Energy and Sustainability. All rights reserved.</p>
-    </div>
-    <div class="quick">
-      <h3>Quick Links</h3>
-      <ul>
-        <li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="education.html">Education & Training</a></li>
-        <li><a href="events.html">Events</a></li>
-                <li><a href="sitemap.html">Sitemap</a></li>
-
-      </ul>
-    </div>
-    <form class="write" onsubmit="return false">
-      <h3>Write to us</h3>
-      <input type="text" placeholder="Name" aria-label="Name">
-      <input type="email" placeholder="Email" aria-label="Email">
-      <textarea placeholder="Comments" aria-label="Comments" rows="3"></textarea>
-      <div class="captcha-row"><span class="captcha" aria-hidden="true">j S H u s F</span><input type="text" placeholder="Captcha" aria-label="Captcha"></div>
-      <a href="#" class="reload">Reload Captcha</a>
-      <button class="btn" type="submit">Submit</button>
-    </form>
-  </div>
-</footer>
-
-<a href="#" class="to-top" aria-label="Back to top">&#8963;</a>
+            <div class="footer-right">
+                <a href="#" class="back-to-top">Back to Top <i class="fa-solid fa-arrow-up"></i></a>
+                <ul class="footer-nav">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Product</a></li>
+                    <li><a href="#">Blogs</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+                <div class="footer-legal">
+                    <a href="#">Privacy and Policy</a>
+                    <a href="#">Term and Condition</a>
+                </div>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>

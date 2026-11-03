@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expanding Accordion Cards</title>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Mukta', system-ui, -apple-system, sans-serif;
+        }
+
+        body {
+            background-color: #0f172a;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+
+        /* Container holding all 4 cards side by side */
+        .accordion-container {
+            display: flex;
+            gap: 16px;
+            width: 100%;
+            max-width: 1200px;
+            height: 480px;
+        }
+
+        /* Default state of each card */
+        .card {
+            position: relative;
+            flex: 1; /* All cards take equal width initially */
+            border-radius: 24px;
+            overflow: hidden;
+            transition: flex 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+            background-size: cover;
+            background-position: center;
+            cursor: pointer;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        /* 4 Background Images */
+        .card-1 { background-image: url('https://images.unsplash.com/photo-1509391365360-2e959784a276?auto=format&fit=crop&w=800&q=80'); }
+        .card-2 { background-image: url('https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80'); }
+        .card-3 { background-image: url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=800&q=80'); }
+        .card-4 { background-image: url('https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=800&q=80'); }
+
+        /* Dark overlay gradient for contrast */
+        .card-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.2) 60%);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 24px;
+            transition: opacity 0.3s ease;
+        }
+
+        /* Default Card Labels (Shown when not hovered) */
+        .card-default-info {
+            opacity: 1;
+            transition: opacity 0.3s ease;
+        }
+
+        .badge-number {
+            display: inline-block;
+            background: rgba(255, 220, 152, 0.9);
+            color: #1a1a1a;
+            font-size: 13px;
+            font-weight: 700;
+            padding: 4px 12px;
+            border-radius: 20px;
+            margin-bottom: 8px;
+        }
+
+        .card-default-title {
+            color: #ffffff;
+            font-size: 20px;
+            font-weight: 700;
+            white-space: nowrap;
+        }
+
+        /* AIMS Details Panel (Hidden by default, fades in on hover) */
+        .aims-panel {
+            background-color: rgba(255, 220, 152, 0.95); /* #FFDC98 secondary color */
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 24px;
+            color: #1a1a1a;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.4s ease 0.1s;
+            pointer-events: none;
+            width: 100%;
+        }
+
+        .aims-panel h2 {
+            font-size: 22px;
+            font-weight: 800;
+            margin-bottom: 16px;
+            letter-spacing: 0.5px;
+            color: #004F9F; /* #004F9F primary color */
+        }
+
+        .aims-list {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .aim-item {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 10px 14px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 13.5px;
+            font-weight: 600;
+            color: #1a1a1a;
+        }
+
+        .aim-num {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background-color: #004F9F;
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            flex-shrink: 0;
+        }
+
+        /* ================= HOVER ACTIONS ================= */
+        
+        /* 1. Push neighbor cards aside by giving hovered card a bigger flex value */
+        .accordion-container:hover .card {
+            flex: 0.7; /* Shrink inactive cards slightly */
+        }
+
+        .accordion-container .card:hover {
+            flex: 3; /* Expand hovered card to push others */
+        }
+
+        /* 2. Hide default simple title on hover */
+        .card:hover .card-default-info {
+            opacity: 0;
+        }
+
+        /* 3. Reveal AIMS Panel smoothly */
+        .card:hover .aims-panel {
+            opacity: 1;
+            transform: translateY(0);
+            pointer-events: auto;
+        }
+
+        /* Responsive design for tablets and mobile */
+        @media (max-width: 900px) {
+            .accordion-container {
+                flex-direction: column;
+                height: auto;
+            }
+            .card {
+                height: 250px;
+                flex: none !important;
+            }
+            .card:hover {
+                height: 380px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="accordion-container">
+        
+        <!-- Card 1 -->
+        <div class="card card-1">
+            <div class="card-overlay">
+                <div class="card-default-info">
+                    <span class="badge-number">01</span>
+                    <h3 class="card-default-title">Skill & Knowledge</h3>
+                </div>
+
+                <!-- Hidden Aims Panel -->
+                <div class="aims-panel">
+                    <h2>AIMS FOR</h2>
+                    <div class="aims-list">
+                        <div class="aim-item"><div class="aim-num">1</div> 100,000+ students targeted through sustainability courses</div>
+                        <div class="aim-item"><div class="aim-num">2</div> Structured learning pathways for future skills</div>
+                        <div class="aim-item"><div class="aim-num">3</div> Hands-on workshops and interdisciplinary programs</div>
+                        <div class="aim-item"><div class="aim-num">4</div> Building industry-aligned talent at scale</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="card card-2">
+            <div class="card-overlay">
+                <div class="card-default-info">
+                    <span class="badge-number">02</span>
+                    <h3 class="card-default-title">Translational Research</h3>
+                </div>
+
+                <!-- Hidden Aims Panel -->
+                <div class="aims-panel">
+                    <h2>AIMS FOR</h2>
+                    <div class="aims-list">
+                        <div class="aim-item"><div class="aim-num">1</div> Applied, field-relevant research initiatives</div>
+                        <div class="aim-item"><div class="aim-num">2</div> 3 projects initiated during 2025–2026</div>
+                        <div class="aim-item"><div class="aim-num">3</div> Bridging academic theory with real implementation</div>
+                        <div class="aim-item"><div class="aim-num">4</div> Data-driven solutions for energy security</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="card card-3">
+            <div class="card-overlay">
+                <div class="card-default-info">
+                    <span class="badge-number">03</span>
+                    <h3 class="card-default-title">Innovation & Incubation</h3>
+                </div>
+
+                <!-- Hidden Aims Panel -->
+                <div class="aims-panel">
+                    <h2>AIMS FOR</h2>
+                    <div class="aims-list">
+                        <div class="aim-item"><div class="aim-num">1</div> National innovation forums connecting academia & industry</div>
+                        <div class="aim-item"><div class="aim-num">2</div> Seed grant funding for Hackathon winners</div>
+                        <div class="aim-item"><div class="aim-num">3</div> Mentorship to turn ideas into scalable solutions</div>
+                        <div class="aim-item"><div class="aim-num">4</div> Incubation ecosystem for clean tech startups</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="card card-4">
+            <div class="card-overlay">
+                <div class="card-default-info">
+                    <span class="badge-number">04</span>
+                    <h3 class="card-default-title">Research Fellowships</h3>
+                </div>
+
+                <!-- Hidden Aims Panel -->
+                <div class="aims-panel">
+                    <h2>AIMS FOR</h2>
+                    <div class="aims-list">
+                        <div class="aim-item"><div class="aim-num">1</div> 3 Research Fellows joined during 2025–2026</div>
+                        <div class="aim-item"><div class="aim-num">2</div> Supporting interdisciplinary sustainability leadership</div>
+                        <div class="aim-item"><div class="aim-num">3</div> Capacity building across training & outreach</div>
+                        <div class="aim-item"><div class="aim-num">4</div> Global scholar collaboration opportunities</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>

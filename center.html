@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About the Center - IHCFSI</title>
+    <!-- Mukta Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="index.css">
+        <link rel="stylesheet" href="center.css">
+
+    <script src="index.js" defer></script>
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header class="container">
+        <nav>
+<a href="index.html" class="logo">
+    <img src="/assets/honeywell_logo.svg" alt="Honeywell Logo">
+    <span class="logo-separator"></span>
+    <img src="/assets/IITB_logo.png" alt="IITB Logo">
+</a>
+
+            <ul class="nav-links">
+                <li class="nav-item dropdown">
+                    <a href="javascript:void(0)" class="nav-link about-btn">About Us</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#center">Center</a></li>
+                        <li><a href="team.html">Team</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item"><a href="education.html" class="nav-link">Education</a></li>
+                <li class="nav-item"><a href="events.html" class="nav-link">Events</a></li>
+            </ul>
+
+            <!-- Header Action Pill & Theme Toggle Button -->
+            <div class="header-actions">
+                <a href="contact.html" class="contact-btn">Contact Us</a>
+                <button class="theme-toggle-btn" id="themeToggle" title="Toggle Light/Dark Mode">
+                    <i class="fa-solid fa-moon" id="themeIcon"></i>
+                </button>
+            </div>
+        </nav>
+    </header>
+ <main class="container">
+
+
+
+
+        <!-- SECTION 1: About the Center with Gallery Slider (Image 3 Reference) -->
+        <section class="about-center-section">
+            <div class="about-card-split">
+                <div class="about-title-side">
+                    <h2>About the Center</h2>
+                    <p class="about-intro">
+                        The IIT Bombay-Honeywell Centre of Excellence for Future Skills & Innovation (IHCFSI) has been established to build future-ready capabilities in sustainability through an integrated approach to learning, research, and innovation.
+
+Developed under Honeywell India’s flagship skilling initiative, Saksham, the Centre reflects a shared commitment to strengthening the talent, knowledge, and implementation capacity needed to respond to emerging sustainability challenges.
+
+By combining academic learning with applied research, the Centre supports work in areas such as sustainability assessment, water and sanitation, energy security, sustainable finance, and policy advocacy.
+
+It is envisioned as a platform where knowledge can move into practice-supporting real-world adoption, nurturing skilled professionals, and contributing meaningfully to India’s sustainability transition.
+
+
+                    </p>
+                </div>
+                
+                <div class="about-gallery-side">
+                    <div class="gallery-slider-wrapper">
+                        <div class="gallery-slides" id="centerGallerySlides">
+                            <!-- Image Slide 1 -->
+                            <div class="gallery-slide active">
+                                <img src="assets/about_center/about.JPG" alt="Center Lab Facility">
+                                <!-- <div class="gallery-quote-card">
+                                    <p>"Empowering the next generation of engineers with practical digital twins and renewable energy skills to transform global industries."</p>
+                                    <span class="quote-author">IIT Bombay Honeywell CoE</span>
+                                </div> -->
+                            </div>
+                            <!-- Image Slide 2 -->
+                            <div class="gallery-slide">
+                                <img src="assets/about_center/about1.JPG" alt="Research Workstation">
+                                <!-- <div class="gallery-quote-card">
+                                    <p>"Fostering cutting-edge research in clean technology and nuclear engineering simulation platforms."</p>
+                                    <span class="quote-author">Future Skills Lab</span>
+                                </div> -->
+                            </div>
+                            <!-- Image Slide 3 -->
+                            <div class="gallery-slide">
+                                <img src="assets/about_center/about2.JPG" alt="Collaborative Innovation">
+                                <!-- <div class="gallery-quote-card">
+                                    <p>"Bridging academic research with real-world industrial challenges through immersive workshops."</p>
+                                    <span class="quote-author">Innovation Hub</span>
+                                </div> -->
+                            </div>
+                        </div>
+
+                        <!-- Gallery Navigation Controls -->
+                        <div class="gallery-controls">
+                            <button class="gallery-nav-btn" id="prevGalleryBtn" aria-label="Previous Slide">
+                                <i class="fa-solid fa-arrow-left"></i>
+                            </button>
+                            <button class="gallery-nav-btn" id="nextGalleryBtn" aria-label="Next Slide">
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+<!-- SECTION 2: Vision & Mission Section (Evenly Split Cards with Aligned Icons) -->
+        <section class="vision-mission-section">
+            <div class="vm-card-grid">
+                <!-- Vision Card -->
+                <div class="vm-intro-card">
+                    <div class="vm-card-header">
+                        <h2>Our Vision</h2>
+                        <svg class="nc-icon" viewBox="0 0 24 24" width="40" height="40" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg>
+                    </div>
+                    <p>To be a leading global technology university that provides transformative education to create leaders and innovators and generates new knowledge for society and industry.</p>
+                </div>
+
+                <!-- Mission Card -->
+                <div class="vm-intro-card">
+                    <div class="vm-card-header">
+                        <h2>Our Mission</h2>
+                        <svg class="nc-icon" viewBox="0 0 24 24" width="40" height="40" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.2"/></svg>
+                    </div>
+                    <p>To create an ambience in which new ideas, research, and scholarship flourish, and from which the leaders and innovators of tomorrow emerge. To address problems faced by the nation and the world through the talent we nurture and the research we do.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 3: 5 Impact Points Counter Bar -->
+        <section class="impact-counter-section">
+            <div class="impact-pill-bar" id="centerImpactCounters">
+                <div class="impact-item">
+                    <span class="impact-number" data-target="100000" data-suffix="+">0</span>
+                    <span class="impact-label">Students Targeted</span>
+                </div>
+                <div class="impact-divider"></div>
+                <div class="impact-item">
+                    <span class="impact-number" data-target="3" data-suffix="">0</span>
+                    <span class="impact-label">Research Projects</span>
+                </div>
+                <div class="impact-divider"></div>
+                <div class="impact-item">
+                    <span class="impact-number" data-target="3" data-suffix="">0</span>
+                    <span class="impact-label">Research Fellows</span>
+                </div>
+                <div class="impact-divider"></div>
+                <div class="impact-item">
+                    <span class="impact-number" data-target="30" data-suffix="+">0</span>
+                    <span class="impact-label">Workshops & Forums</span>
+                </div>
+                <div class="impact-divider"></div>
+                <div class="impact-item">
+                    <span class="impact-number" data-target="100" data-suffix="%">0</span>
+                    <span class="impact-label">Sustainability Commitment</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 4: Focus Areas Full Card Slider (Replacing old quote gallery) -->
+        <section class="about-center-section">
+            <div class="section-title-box" style="margin-bottom: 25px;">
+                <h2>Focus Areas</h2>
+                <p>The Centre advances sustainability through structured learning, translational research, innovation ecosystems and research fellowship opportunities.</p>
+            </div>
+
+             <div class="accordion-container">
+        
+        <!-- Card 1 -->
+        <div class="card card-1">
+            <div class="card-overlay">
+                <div class="card-default-info">
+                    <span class="badge-number">01</span>
+                    <h3 class="card-default-title">Skill & Knowledge</h3>
+                </div>
+
+                <!-- Hidden Aims Panel -->
+                <div class="aims-panel">
+                    <h2>AIMS FOR</h2>
+                    <div class="aims-list">
+                        <div class="aim-item"><div class="aim-num">1</div> 100,000+ students targeted through sustainability courses</div>
+                        <div class="aim-item"><div class="aim-num">2</div> Structured learning pathways for future skills</div>
+                        <div class="aim-item"><div class="aim-num">3</div> Hands-on workshops and interdisciplinary programs</div>
+                        <div class="aim-item"><div class="aim-num">4</div> Building industry-aligned talent at scale</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="card card-2">
+            <div class="card-overlay">
+                <div class="card-default-info">
+                    <span class="badge-number">02</span>
+                    <h3 class="card-default-title">Translational Research</h3>
+                </div>
+
+                <!-- Hidden Aims Panel -->
+                <div class="aims-panel">
+                    <h2>AIMS FOR</h2>
+                    <div class="aims-list">
+                        <div class="aim-item"><div class="aim-num">1</div> Applied, field-relevant research initiatives</div>
+                        <div class="aim-item"><div class="aim-num">2</div> 3 projects initiated during 2025–2026</div>
+                        <div class="aim-item"><div class="aim-num">3</div> Bridging academic theory with real implementation</div>
+                        <div class="aim-item"><div class="aim-num">4</div> Data-driven solutions for energy security</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="card card-3">
+            <div class="card-overlay">
+                <div class="card-default-info">
+                    <span class="badge-number">03</span>
+                    <h3 class="card-default-title">Innovation & Incubation</h3>
+                </div>
+
+                <!-- Hidden Aims Panel -->
+                <div class="aims-panel">
+                    <h2>AIMS FOR</h2>
+                    <div class="aims-list">
+                        <div class="aim-item"><div class="aim-num">1</div> National innovation forums connecting academia & industry</div>
+                        <div class="aim-item"><div class="aim-num">2</div> Seed grant funding for Hackathon winners</div>
+                        <div class="aim-item"><div class="aim-num">3</div> Mentorship to turn ideas into scalable solutions</div>
+                        <div class="aim-item"><div class="aim-num">4</div> Incubation ecosystem for clean tech startups</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="card card-4">
+            <div class="card-overlay">
+                <div class="card-default-info">
+                    <span class="badge-number">04</span>
+                    <h3 class="card-default-title">Research Fellowships</h3>
+                </div>
+
+                <!-- Hidden Aims Panel -->
+                <div class="aims-panel">
+                    <h2>AIMS FOR</h2>
+                    <div class="aims-list">
+                        <div class="aim-item"><div class="aim-num">1</div> 3 Research Fellows joined during 2025–2026</div>
+                        <div class="aim-item"><div class="aim-num">2</div> Supporting interdisciplinary sustainability leadership</div>
+                        <div class="aim-item"><div class="aim-num">3</div> Capacity building across training & outreach</div>
+                        <div class="aim-item"><div class="aim-num">4</div> Global scholar collaboration opportunities</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+        </section>
+
+
+                        <!-- Breadcrumb Navigation -->
+    <nav class="breadcrumb-container" aria-label="Breadcrumb">
+        <div class="container">
+            <ol class="breadcrumb-list">
+                <li><a href="index.html">Home</a></li>
+                <li class="separator">/</li>
+                <li class="active-crumb">Center</li>
+            </ol>
+        </div>
+    </nav>
+
+ </main>
+
+     <!-- Footer -->
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-left">
+                <div class="footer-brand">
+                    <span>IIT Bombay Honeywell</span>
+                    <span>Centre of Excellence for Future Skills & Innovation</span>
+                </div>
+                <div class="footer-subtitle">
+                    Get the latest updates, harvest news, and special offers directly to your inbox.
+                </div>
+                <form class="subscribe-form" onsubmit="event.preventDefault();">
+                    <input type="email" placeholder="youremail@mail.com" required>
+                    <button type="submit">Send</button>
+                </form>
+
+                <div class="social-icons">
+                    <a href="#" class="social-btn"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" class="social-btn"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#" class="social-btn"><i class="fa-regular fa-envelope"></i></a>
+                    <a href="#" class="social-btn"><i class="fa-solid fa-phone"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-right">
+                <a href="#" class="back-to-top">Back to Top <i class="fa-solid fa-arrow-up"></i></a>
+                <ul class="footer-nav">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Product</a></li>
+                    <li><a href="#">Blogs</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+                <div class="footer-legal">
+                    <a href="#">Privacy and Policy</a>
+                    <a href="#">Term and Condition</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Interactive Scripts -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // --- 1. Gallery Slider Logic ---
+            const slides = document.querySelectorAll('.gallery-slide');
+            const prevBtn = document.getElementById('prevGalleryBtn');
+            const nextBtn = document.getElementById('nextGalleryBtn');
+            let currentSlideIndex = 0;
+
+            function showSlide(index) {
+                slides.forEach((slide, i) => {
+                    slide.classList.remove('active');
+                    if (i === index) slide.classList.add('active');
+                });
+            }
+
+            if (nextBtn && prevBtn) {
+                nextBtn.addEventListener('click', () => {
+                    currentSlideIndex = (currentSlideIndex + 1) % slides.length;
+                    showSlide(currentSlideIndex);
+                });
+
+                prevBtn.addEventListener('click', () => {
+                    currentSlideIndex = (currentSlideIndex - 1 + slides.length) % slides.length;
+                    showSlide(currentSlideIndex);
+                });
+            }
+
+            // --- 2. Vision & Mission Toggle ---
+            const vmData = [
+                {
+                    title: "Vision",
+                    text: "To be a global benchmark for excellence in future skills development, bridging academia and industry to drive sustainable innovation."
+                },
+                {
+                    title: "Mission",
+                    text: "To empower students, researchers, and professionals with practical engineering skills, cutting-edge technologies, and real-world project experience in clean energy."
+                }
+            ];
+            let currentVmIndex = 0;
+            const vmTitle = document.getElementById('vmTitle');
+            const vmText = document.getElementById('vmText');
+            const prevVmBtn = document.getElementById('prevVmBtn');
+            const nextVmBtn = document.getElementById('nextVmBtn');
+
+            function updateVmContent(index) {
+                vmTitle.innerText = vmData[index].title;
+                vmText.innerText = vmData[index].text;
+            }
+
+            if (prevVmBtn && nextVmBtn) {
+                prevVmBtn.addEventListener('click', () => {
+                    currentVmIndex = (currentVmIndex - 1 + vmData.length) % vmData.length;
+                    updateVmContent(currentVmIndex);
+                });
+                nextVmBtn.addEventListener('click', () => {
+                    currentVmIndex = (currentVmIndex + 1) % vmData.length;
+                    updateVmContent(currentVmIndex);
+                });
+            }
+
+            // --- 3. 5 Impact Points Scroll Counter ---
+            const counters = document.querySelectorAll('.impact-number');
+            let animated = false;
+
+            function startCounters() {
+                counters.forEach(counter => {
+                    const target = +counter.getAttribute('data-target');
+                    const suffix = counter.getAttribute('data-suffix') || '';
+                    const speed = 150;
+                    let count = 0;
+                    const inc = target / speed;
+
+                    const updateCount = () => {
+                        count += inc;
+                        if (count < target) {
+                            counter.innerText = Math.ceil(count) + suffix;
+                            setTimeout(updateCount, 15);
+                        } else {
+                            counter.innerText = target + suffix;
+                        }
+                    };
+                    updateCount();
+                });
+            }
+
+            function checkScroll() {
+                const section = document.getElementById('centerImpactCounters');
+                if (!section) return;
+                const sectionPos = section.getBoundingClientRect().top;
+                const screenPos = window.innerHeight;
+
+                if (sectionPos < screenPos && sectionPos > -section.offsetHeight) {
+                    if (!animated) {
+                        startCounters();
+                        animated = true;
+                    }
+                } else {
+                    animated = false;
+                }
+            }
+
+            window.addEventListener('scroll', checkScroll);
+            checkScroll();
+        });
+
+
+
+
+
+        document.addEventListener('DOMContentLoaded', () => {
+            // --- 1. Focus Areas Slider Content Data ---
+            const focusData = [
+                {
+                    badge: "01",
+                    title: "Skill & Knowledge Development",
+                    desc: "Deliver expert-led sustainability courses to over 1 lakh learners, building talent and sustainability-driven mindsets at scale. The Centre offers structured learning pathways, hands-on workshops, and interdisciplinary programmes that equip learners with future-ready skills aligned with evolving industry and sustainability needs."
+                },
+                {
+                    badge: "02",
+                    title: "Translational Research",
+                    desc: "Conduct applied, field-relevant research through research projects focused on contemporary sustainability challenges. These initiatives bridge academic research and real-world implementation through collaborative problem-solving, data-driven insights, and scalable solutions."
+                },
+                {
+                    badge: "03",
+                    title: "Innovation & Incubation",
+                    desc: "Convene national innovation forums to connect students, researchers, industry, and policymakers around sustainability challenges. Support high-potential innovations with mentorship and seed funding to turn ideas into scalable solutions."
+                },
+                {
+                    badge: "04",
+                    title: "Research Fellowships",
+                    desc: "Fellowships support scholars who contribute to the Centre’s research, training, and outreach components while building their own capacities in interdisciplinary sustainability leadership."
+                }
+            ];
+
+            const focusSlides = document.querySelectorAll('#focusSliderSlides .gallery-slide');
+            const prevFocusBtn = document.getElementById('prevFocusBtn');
+            const nextFocusBtn = document.getElementById('nextFocusBtn');
+            const focusBadge = document.getElementById('focusBadge');
+            const focusTitle = document.getElementById('focusTitle');
+            const focusDesc = document.getElementById('focusDesc');
+            let currentFocusIdx = 0;
+
+            function updateFocusSlider(index) {
+                focusSlides.forEach((slide, i) => {
+                    slide.classList.remove('active');
+                    if (i === index) slide.classList.add('active');
+                });
+                focusBadge.innerText = focusData[index].badge;
+                focusTitle.innerText = focusData[index].title;
+                focusDesc.innerText = focusData[index].desc;
+            }
+
+            if (nextFocusBtn && prevFocusBtn) {
+                nextFocusBtn.addEventListener('click', () => {
+                    currentFocusIdx = (currentFocusIdx + 1) % focusData.length;
+                    updateFocusSlider(currentFocusIdx);
+                });
+
+                prevFocusBtn.addEventListener('click', () => {
+                    currentFocusIdx = (currentFocusIdx - 1 + focusData.length) % focusData.length;
+                    updateFocusSlider(currentFocusIdx);
+                });
+            }
+
+            // --- 2. 5 Impact Points Scroll Counter ---
+            const counters = document.querySelectorAll('.impact-number');
+            let animated = false;
+
+            function startCounters() {
+                counters.forEach(counter => {
+                    const target = +counter.getAttribute('data-target');
+                    const suffix = counter.getAttribute('data-suffix') || '';
+                    const speed = 150;
+                    let count = 0;
+                    const inc = target / speed;
+
+                    const updateCount = () => {
+                        count += inc;
+                        if (count < target) {
+                            counter.innerText = Math.ceil(count).toLocaleString() + suffix;
+                            setTimeout(updateCount, 15);
+                        } else {
+                            counter.innerText = target.toLocaleString() + suffix;
+                        }
+                    };
+                    updateCount();
+                });
+            }
+
+            function checkScroll() {
+                const section = document.getElementById('centerImpactCounters');
+                if (!section) return;
+                const sectionPos = section.getBoundingClientRect().top;
+                const screenPos = window.innerHeight;
+
+                if (sectionPos < screenPos && sectionPos > -section.offsetHeight) {
+                    if (!animated) {
+                        startCounters();
+                        animated = true;
+                    }
+                } else {
+                    animated = false;
+                }
+            }
+
+            window.addEventListener('scroll', checkScroll);
+            checkScroll();
+        });
+
+
+
+    </script>
+</body>
+</html>
