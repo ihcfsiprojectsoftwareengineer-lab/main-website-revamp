@@ -30,13 +30,13 @@
             <ul class="nav-links">
                 <!-- Dropdown item without click redirection -->
                 <li class="nav-item dropdown">
-                    <a href="javascript:void(0)" class="nav-link about-btn">About Us</a>
+                    <a href="javascript:void(0)" class="nav-link about-btn">About</a>
                     <ul class="dropdown-menu">
-                        <li><a href="center.html">Center</a></li>
-                        <li><a href="team.html">Team</a></li>
+                        <li><a href="center.html">Our Center</a></li>
+                        <li><a href="team.html">Our Team</a></li>
                     </ul>
                 </li>
- <li class="nav-item"><a href="education.html" class="nav-link">Education</a></li>
+ <li class="nav-item"><a href="education.html" class="nav-link">Courses</a></li>
                 <li class="nav-item"><a href="events.html" class="nav-link">Events</a></li>
             </ul>
 
@@ -89,6 +89,166 @@
                 <div class="stat-label">Startups to be Incubated</div>
             </div>
         </section>
+
+
+
+
+<!-- Testimonials Section -->
+<section class="testimonials-section container" style="padding: 60px 0;">
+
+    <!-- Testimonial Wrapper Grid/Flex -->
+    <div class="testimonial-container">
+        <!-- Left Image Card -->
+        <div class="testimonial-image-wrapper">
+            <img src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=1200&q=80" alt="Testimonial Speaker">
+        </div>
+
+        <!-- Overlapping Quote Box -->
+        <div class="testimonial-quote-card">
+            <p class="quote-text">
+                “GreenRoots has been our trusted partner for years. Their produce is always fresh, organic, and delivered right on time. Our customers constantly compliment the quality, and I know it's because we source from a team that truly cares about sustainability.”
+            </p>
+            <div class="quote-author">
+                <strong>Laura Schubert</strong> — <span style="color: var(--text-muted);">Organic Retailer</span>
+            </div>
+        </div>
+
+        <!-- Carousel Navigation Controls -->
+        <div class="testimonial-nav">
+            <button class="nav-btn prev-btn" aria-label="Previous Testimonial">
+                <i class="fa-solid fa-arrow-left"></i>
+            </button>
+            <button class="nav-btn next-btn" aria-label="Next Testimonial">
+                <i class="fa-solid fa-arrow-right"></i>
+            </button>
+        </div>
+    </div>
+</section>
+
+<!-- Testimonials Styles -->
+<style>
+    .testimonial-container {
+        position: relative;
+        width: 100%;
+        max-width: 1100px;
+        margin: 0 auto;
+        min-height: 440px;
+    }
+
+    .testimonial-image-wrapper {
+        width: 60%;
+        height: 420px;
+        border-radius: 24px;
+        overflow: hidden;
+    }
+
+    .testimonial-image-wrapper img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .testimonial-quote-card {
+        position: absolute;
+        top: 40px;
+        right: 5%;
+        width: 50%;
+        background-color: var(--card-bg);
+        border: 1px solid var(--border-color);
+        border-radius: 24px;
+        padding: 40px 36px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        z-index: 2;
+    }
+
+    .quote-text {
+        font-size: 18px;
+        line-height: 1.6;
+        color: var(--text-color);
+        margin-bottom: 24px;
+        font-weight: 400;
+    }
+
+    .quote-author {
+        font-size: 15px;
+        color: var(--text-color);
+    }
+
+    .testimonial-nav {
+        position: absolute;
+        bottom: 0;
+        right: 5%;
+        display: flex;
+        gap: 12px;
+        z-index: 3;
+    }
+
+    .nav-btn {
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        border: 1px solid var(--border-color);
+        background-color: var(--card-bg);
+        color: var(--text-color);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        font-size: 15px;
+        transition: all 0.25s ease;
+    }
+
+    .next-btn {
+        background-color: var(--secondary-color);
+        color: #1a1a1a;
+        border-color: var(--secondary-color);
+    }
+
+    .nav-btn:hover {
+        opacity: 0.9;
+        transform: scale(1.04);
+    }
+
+    /* Mobile Responsive Adjustment */
+    @media (max-width: 850px) {
+        .testimonial-container {
+            display: flex;
+            flex-direction: column;
+            min-height: auto;
+        }
+
+        .testimonial-image-wrapper {
+            width: 100%;
+            height: 280px;
+        }
+
+        .testimonial-quote-card {
+            position: relative;
+            top: -40px;
+            right: 0;
+            width: 92%;
+            margin: 0 auto;
+        }
+
+        .testimonial-nav {
+            position: relative;
+            bottom: 20px;
+            right: 0;
+            justify-content: flex-end;
+            margin-right: 4%;
+        }
+    }
+</style>
+
+
+
+
+
+
+
+
+
+
     </main>
 
     <!-- Footer -->
@@ -119,16 +279,10 @@
                 <a href="#" class="back-to-top">Back to Top <i class="fa-solid fa-arrow-up"></i></a>
                 <ul class="footer-nav">
                     <li><a href="#">Home</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Services</a></li>
-                    <li><a href="#">Product</a></li>
-                    <li><a href="#">Blogs</a></li>
-                    <li><a href="#">Contact</a></li>
+                    <li><a href="center.html">About</a></li>
+                    <li><a href="education.html">Courses</a></li>
+                    <li><a href="contact.html">Contact</a></li>
                 </ul>
-                <div class="footer-legal">
-                    <a href="#">Privacy and Policy</a>
-                    <a href="#">Term and Condition</a>
-                </div>
             </div>
         </div>
     </footer>
