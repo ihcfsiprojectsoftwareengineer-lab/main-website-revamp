@@ -595,3 +595,80 @@ body.dark-mode .vm-overlay-box {
                 height: 380px;
             }
         }
+
+
+
+         /* --- FAQ Specific Styling & Animated Accordion --- */
+        .faq-item {
+            background-color: var(--card-bg);
+            border-radius: 16px;
+            border: 1px solid var(--border-color);
+            padding: 24px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .faq-button {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: none;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            color: var(--text-color);
+            text-align: left;
+            padding: 0;
+        }
+
+        .faq-button span {
+            font-size: 18px;
+            font-weight: 600;
+        }
+
+        .faq-icon-wrapper {
+            position: relative;
+            width: 24px;
+            height: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .faq-icon-line {
+            position: absolute;
+            background-color: var(--text-color);
+            border-radius: 2px;
+            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease;
+        }
+
+        .faq-icon-line.horizontal {
+            width: 16px;
+            height: 2px;
+        }
+
+        .faq-icon-line.vertical {
+            width: 2px;
+            height: 16px;
+        }
+
+        /* Opened State (Rotates vertical line into minus sign) */
+        .faq-item.active .faq-icon-line.vertical {
+            transform: rotate(90deg);
+            opacity: 0;
+        }
+
+        .faq-answer {
+            max-height: 0;
+            opacity: 0;
+            overflow: hidden;
+            transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease, margin-top 0.3s ease;
+            margin-top: 0;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 200px;
+            opacity: 1;
+            margin-top: 16px;
+        }

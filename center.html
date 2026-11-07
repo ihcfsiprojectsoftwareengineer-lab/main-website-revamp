@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About the Center - IHCFSI</title>
+    <title>IHCFSI - About the Center</title>
     <!-- Mukta Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -40,7 +40,6 @@
 
             <!-- Header Action Pill & Theme Toggle Button -->
             <div class="header-actions">
-                <a href="contact.html" class="contact-btn">Contact Us</a>
                 <button class="theme-toggle-btn" id="themeToggle" title="Toggle Light/Dark Mode">
                     <i class="fa-solid fa-moon" id="themeIcon"></i>
                 </button>
@@ -264,6 +263,90 @@ It is envisioned as a platform where knowledge can move into practice-supporting
 
 
         </section>
+
+
+
+    <!-- FAQ Section -->
+        <section style="margin-bottom: 80px; max-width: 860px; margin-left: auto; margin-right: auto; text-align: center;">
+            <!-- Top Badge -->
+            <div style="margin-bottom: 20px;">
+                <span style="border: 1px solid var(--border-color); color: var(--text-muted); padding: 6px 18px; border-radius: 20px; font-size: 14px; font-weight: 500; display: inline-block;">• FAQs</span>
+            </div>
+
+            <!-- Heading & Subheading -->
+            <h2 style="font-size: 44px; font-weight: 700; color: var(--text-color); margin-bottom: 16px; line-height: 1.2;">Go Clarity Before<br>You Go Solar</h2>
+            <p style="color: var(--text-muted); font-size: 16px; margin-bottom: 40px; line-height: 1.5; max-width: 600px; margin-left: auto; margin-right: auto;">Every installation is handled by licensed specialists with proven expertise.</p>
+
+            <!-- FAQ Accordion List -->
+            <div style="display: flex; flex-direction: column; gap: 16px; text-align: left;">
+                <!-- Accordion Item 1 (Open by default) -->
+                <div class="faq-item">
+                    <button type="button" class="faq-button" onclick="toggleFaq(this)">
+                        <span>Skill & Knowledge Development</span>
+                        <div class="faq-icon-wrapper">
+                            <div class="faq-icon-line horizontal"></div>
+                            <div class="faq-icon-line vertical"></div>
+                        </div>
+                    </button>
+                    <div class="faq-answer">
+                        <p style="color: var(--text-muted); font-size: 15px; line-height: 1.6; margin: 0;">Installation typically takes one to three days depending on system size, site readiness, and weather conditions, ensuring your setup is done safely and efficiently.</p>
+                    </div>
+                </div>
+
+                <!-- Accordion Item 2 -->
+                <div class="faq-item">
+                    <button type="button" class="faq-button" onclick="toggleFaq(this)">
+                        <span>Translational Research</span>
+                        <div class="faq-icon-wrapper">
+                            <div class="faq-icon-line horizontal"></div>
+                            <div class="faq-icon-line vertical"></div>
+                        </div>
+                    </button>
+                    <div class="faq-answer">
+                        <p style="color: var(--text-muted); font-size: 15px; line-height: 1.6; margin: 0;">Yes, we provide comprehensive 25-year panel performance warranties and up to 10-year battery warranties for long-term peace of mind.</p>
+                    </div>
+                </div>
+
+                <!-- Accordion Item 3 -->
+                <div class="faq-item">
+                    <button type="button" class="faq-button" onclick="toggleFaq(this)">
+                        <span>Research Fellowship</span>
+                        <div class="faq-icon-wrapper">
+                            <div class="faq-icon-line horizontal"></div>
+                            <div class="faq-icon-line vertical"></div>
+                        </div>
+                    </button>
+                    <div class="faq-answer">
+                        <p style="color: var(--text-muted); font-size: 15px; line-height: 1.6; margin: 0;">Solar systems require minimal maintenance. Periodic cleaning of dust and debris, along with an annual inspection, is usually sufficient.</p>
+                    </div>
+                </div>
+
+                <!-- Accordion Item 4 -->
+                <div class="faq-item">
+                    <button type="button" class="faq-button" onclick="toggleFaq(this)">
+                        <span>Innovation & Incubation</span>
+                        <div class="faq-icon-wrapper">
+                            <div class="faq-icon-line horizontal"></div>
+                            <div class="faq-icon-line vertical"></div>
+                        </div>
+                    </button>
+
+                    
+                    <div class="faq-answer">
+                        <span>What does innovation and incubation include?</span>
+                        <p style="color: var(--text-muted); font-size: 15px; line-height: 1.6; margin: 0;">It includes mentoring, entrepreneurship support, sustainability-focused solution development, and collaboration with academic and industry ecosystems.</p>
+                    </div>
+
+
+<div class="faq-answer">
+                        <span>Will startups or student ideas be supported?</span>
+                        <p style="color: var(--text-muted); font-size: 15px; line-height: 1.6; margin: 0;">The Centre aims to encourage innovation-led initiatives and support promising ideas through relevant programmes and opportunities.</p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
 
 
                         <!-- Breadcrumb Navigation -->
@@ -531,7 +614,37 @@ It is envisioned as a platform where knowledge can move into practice-supporting
             checkScroll();
         });
 
+   <!-- Interactive Scripts -->
+        // FAQ Toggle function with animated icons
+        function toggleFaq(button) {
+            const faqItem = button.parentElement;
+            const isActive = faqItem.classList.contains('active');
 
+            // Close all open FAQs
+            document.querySelectorAll('.faq-item').forEach(item => {
+                item.classList.remove('active');
+            });
+
+            // Toggle current if it was not active
+            if (!isActive) {
+                faqItem.classList.add('active');
+            }
+        }
+
+        // Theme Toggle Functionality
+        const themeToggleBtn = document.getElementById('themeToggle');
+        const themeIcon = document.getElementById('themeIcon');
+
+        themeToggleBtn.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+            if (document.body.classList.contains('dark-mode')) {
+                themeIcon.classList.remove('fa-moon');
+                themeIcon.classList.add('fa-sun');
+            } else {
+                themeIcon.classList.remove('fa-sun');
+                themeIcon.classList.add('fa-moon');
+            }
+        });
 
     </script>
 </body>
