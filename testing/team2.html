@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Core Team - IHCFSI</title>
+    <!-- Mukta Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="index.css">
+    <script src="index.js" defer></script>
+    <style>
+        /* --- Team Page Layout Styles --- */
+        .team-section {
+            margin: 40px 0 70px;
+        }
+
+        .section-header-box {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .section-header-box h1 {
+            font-size: 38px;
+            font-weight: 700;
+            color: var(--text-color);
+            margin-bottom: 5px;
+        }
+
+        .section-header-box p {
+            color: var(--text-muted);
+            font-size: 16px;
+        }
+
+        /* Expanding 4-Card Accordion Container */
+        .team-accordion-container {
+            display: flex;
+            gap: 16px;
+            width: 100%;
+            height: 460px;
+            margin-bottom: 50px;
+        }
+
+        /* Each Expanding Card Box */
+        .team-expand-card {
+            position: relative;
+            flex: 1;
+            border-radius: 28px;
+            overflow: hidden;
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+            transition: flex 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+            cursor: pointer;
+        }
+
+        body.dark-mode .team-expand-card {
+            background-color: var(--card-bg);
+        }
+
+        /* Inner Split: Collapsed state is 1 full column, Hover expands to 2 columns */
+        .card-inner-split {
+            display: grid;
+            grid-template-columns: 1fr 0fr; /* Collapsed: Image takes full width, panel is hidden */
+            width: 100%;
+            height: 100%;
+            transition: grid-template-columns 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+
+        .team-expand-card:hover .card-inner-split {
+            grid-template-columns: 1.2fr 1.8fr; /* Expanded: Splits to show image and panel side-by-side */
+        }
+
+        /* Left Photo Area */
+        .team-photo-side {
+            position: relative;
+            background-color: #eaf8c9; /* Pale yellowish-green frame background */
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 14px;
+            overflow: hidden;
+        }
+
+        body.dark-mode .team-photo-side {
+            background-color: #23311e;
+        }
+
+        .team-photo-side img {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: top center;
+            z-index: 1;
+            border-radius: 20px;
+            transition: transform 0.5s ease;
+        }
+
+        .team-tag {
+            position: relative;
+            z-index: 2;
+            align-self: flex-start;
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(6px);
+            color: #ffffff;
+            font-size: 11px;
+            font-weight: 600;
+            padding: 4px 12px;
+            border-radius: 20px;
+            letter-spacing: 0.5px;
+        }
+
+        /* Name and Role Box Overlay at bottom when collapsed */
+        .team-name-overlay {
+            position: relative;
+            z-index: 2;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 12px 16px;
+            border-radius: 16px;
+            box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+            max-width: 220px;
+        }
+
+        body.dark-mode .team-name-overlay {
+            background: rgba(30, 41, 59, 0.95);
+            color: #f8fafc;
+        }
+
+        .team-name-overlay h3 {
+            font-size: 16px;
+            font-weight: 700;
+            color: #1a1a1a;
+            line-height: 1.2;
+            margin-bottom: 2px;
+        }
+
+        body.dark-mode .team-name-overlay h3 {
+            color: #f8fafc;
+        }
+
+        .team-name-overlay p {
+            font-size: 12px;
+            color: #666666;
+            font-weight: 500;
+        }
+
+        body.dark-mode .team-name-overlay p {
+            color: #94a3b8;
+        }
+
+        /* Right Side: Details Panel (Revealed on Hover) */
+        .team-aims-panel {
+            background-color: #eaf8c9;
+            padding: 24px 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            opacity: 0;
+            overflow: hidden;
+            white-space: nowrap;
+            transition: opacity 0.3s ease;
+            pointer-events: none;
+            height: 100%;
+        }
+
+        body.dark-mode .team-aims-panel {
+            background-color: #1a2638;
+        }
+
+        .team-expand-card:hover .team-aims-panel {
+            opacity: 1;
+            pointer-events: auto;
+            white-space: normal;
+        }
+
+        .team-aims-panel h2 {
+            font-size: 20px;
+            font-weight: 800;
+            color: #004F9F;
+            letter-spacing: 0.5px;
+            margin-bottom: 16px;
+        }
+
+        .aims-list {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .aim-item {
+            background-color: #ffffff;
+            border-radius: 12px;
+            padding: 10px 14px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+        }
+
+        body.dark-mode .aim-item {
+            background-color: #283548;
+            color: #f8fafc;
+        }
+
+        .aim-number {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background-color: #004F9F;
+            color: #ffffff;
+            font-weight: 700;
+            font-size: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .aim-text {
+            font-size: 13px;
+            font-weight: 600;
+            color: #333333;
+            line-height: 1.3;
+        }
+
+        body.dark-mode .aim-text {
+            color: #f8fafc;
+        }
+
+        /* --- HOVER EXPANSION LOGIC --- */
+        .team-accordion-container:hover .team-expand-card {
+            flex: 0.6;
+        }
+
+        .team-accordion-container .team-expand-card:hover {
+            flex: 3.2;
+        }
+
+        /* Responsive Breakpoints */
+        @media (max-width: 992px) {
+            .team-accordion-container {
+                flex-direction: column;
+                height: auto;
+            }
+            .team-expand-card {
+                height: 320px;
+                flex: none !important;
+            }
+            .team-expand-card:hover {
+                height: 450px;
+            }
+            .card-inner-split,
+            .team-expand-card:hover .card-inner-split {
+                grid-template-columns: 1fr !important;
+            }
+            .team-aims-panel {
+                display: none; /* Mobile fallback click/hover view */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header class="container">
+        <nav>
+            <a href="index.html" class="logo">
+                <img src="/assets/honeywell_logo.svg" alt="Honeywell Logo">
+                <span class="logo-separator"></span>
+                <img src="/assets/IITB_logo.png" alt="IITB Logo">
+            </a>
+            
+            <ul class="nav-links">
+                <li class="nav-item dropdown">
+                    <a href="javascript:void(0)" class="nav-link about-btn">About Us</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="center.html">Center</a></li>
+                        <li><a href="team.html" style="background-color: var(--secondary-color); color: #1a1a1a;">Team</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item"><a href="education.html" class="nav-link">Education</a></li>
+                <li class="nav-item"><a href="events.html" class="nav-link">Events</a></li>
+            </ul>
+
+            <div class="header-actions">
+                <a href="contact.html" class="contact-btn">Contact Us</a>
+                <button class="theme-toggle-btn" id="themeToggle" title="Toggle Light/Dark Mode">
+                    <i class="fa-solid fa-moon" id="themeIcon"></i>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container">
+
+        <!-- Core Team Section -->
+        <section class="team-section">
+            <div class="section-header-box">
+                <h1>Meet Our Core Team</h1>
+                <p>Leadership, research management, and technical experts guiding the Centre of Excellence.</p>
+            </div>
+
+            <!-- Expanding Accordion Row 1 -->
+            <div class="team-accordion-container">
+                <!-- Member 1 -->
+                <div class="team-expand-card">
+                    <div class="card-inner-split">
+                        <div class="team-photo-side">
+                            <span class="team-tag">LEADERSHIP</span>
+                            <img src="https://images.unsplash.com/photo-1592417817098-8f3d6eb17985?auto=format&fit=crop&w=800&q=80" alt="Sophia Nguyen">
+                            <div class="team-name-overlay">
+                                <h3>Sophia Nguyen</h3>
+                                <p>Sustainability Manager</p>
+                            </div>
+                        </div>
+                        <div class="team-aims-panel">
+                            <h2>EXPERTISE & GOALS</h2>
+                            <div class="aims-list">
+                                <div class="aim-item"><div class="aim-number">1</div><div class="aim-text">Leading campus-wide clean energy transition programs</div></div>
+                                <div class="aim-item"><div class="aim-number">2</div><div class="aim-text">Overseeing 50+ interdisciplinary research projects</div></div>
+                                <div class="aim-item"><div class="aim-number">3</div><div class="aim-text">Building strategic industry & government partnerships</div></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Member 2 -->
+                <div class="team-expand-card">
+                    <div class="card-inner-split">
+                        <div class="team-photo-side">
+                            <span class="team-tag">FACULTY</span>
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=800&q=80" alt="Dr. Alok Sharma">
+                            <div class="team-name-overlay">
+                                <h3>Dr. Alok Sharma</h3>
+                                <p>Faculty Coordinator</p>
+                            </div>
+                        </div>
+                        <div class="team-aims-panel">
+                            <h2>EXPERTISE & GOALS</h2>
+                            <div class="aims-list">
+                                <div class="aim-item"><div class="aim-number">1</div><div class="aim-text">Designing advanced solar & grid simulation courses</div></div>
+                                <div class="aim-item"><div class="aim-number">2</div><div class="aim-text">Directing academic curriculum for students</div></div>
+                                <div class="aim-item"><div class="aim-number">3</div><div class="aim-text">Publishing translational clean-tech research papers</div></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Member 3 -->
+                <div class="team-expand-card">
+                    <div class="card-inner-split">
+                        <div class="team-photo-side">
+                            <span class="team-tag">INNOVATION</span>
+                            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=800&q=80" alt="Ms. Jaya K">
+                            <div class="team-name-overlay">
+                                <h3>Ms. Jaya K</h3>
+                                <p>Senior Associate</p>
+                            </div>
+                        </div>
+                        <div class="team-aims-panel">
+                            <h2>EXPERTISE & GOALS</h2>
+                            <div class="aims-list">
+                                <div class="aim-item"><div class="aim-number">1</div><div class="aim-text">Convening national hackathons & innovation forums</div></div>
+                                <div class="aim-item"><div class="aim-number">2</div><div class="aim-text">Providing seed grant funding for student winners</div></div>
+                                <div class="aim-item"><div class="aim-number">3</div><div class="aim-text">Incubating high-potential clean-tech startups</div></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Member 4 -->
+                <div class="team-expand-card">
+                    <div class="card-inner-split">
+                        <div class="team-photo-side">
+                            <span class="team-tag">TECHNICAL</span>
+                            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=800&q=80" alt="Dr. Subrata Jana">
+                            <div class="team-name-overlay">
+                                <h3>Dr. Subrata Jana</h3>
+                                <p>Program Manager</p>
+                            </div>
+                        </div>
+                        <div class="team-aims-panel">
+                            <h2>EXPERTISE & GOALS</h2>
+                            <div class="aims-list">
+                                <div class="aim-item"><div class="aim-number">1</div><div class="aim-text">Developing mathematical simulation models</div></div>
+                                <div class="aim-item"><div class="aim-number">2</div><div class="aim-text">Optimizing industrial safety & infrastructure</div></div>
+                                <div class="aim-item"><div class="aim-number">3</div><div class="aim-text">Deploying smart grid IoT sensor networks</div></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Advisory Team Section -->
+        <section class="team-section">
+            <div class="section-header-box">
+                <h1>Meet Our Advisory Team</h1>
+                <p>Guidance and strategic oversight from distinguished experts.</p>
+            </div>
+
+            <!-- Expanding Accordion Row 2 -->
+            <div class="team-accordion-container">
+                <!-- Member 5 -->
+                <div class="team-expand-card">
+                    <div class="card-inner-split">
+                        <div class="team-photo-side">
+                            <span class="team-tag">ADVISORY</span>
+                            <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=800&q=80" alt="Dr. Priya Menon">
+                            <div class="team-name-overlay">
+                                <h3>Dr. Priya Menon</h3>
+                                <p>Research Coordinator</p>
+                            </div>
+                        </div>
+                        <div class="team-aims-panel">
+                            <h2>EXPERTISE & GOALS</h2>
+                            <div class="aims-list">
+                                <div class="aim-item"><div class="aim-number">1</div><div class="aim-text">Facilitating collaborative field research</div></div>
+                                <div class="aim-item"><div class="aim-number">2</div><div class="aim-text">Managing fellowship grants and scholar programs</div></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Member 6 -->
+                <div class="team-expand-card">
+                    <div class="card-inner-split">
+                        <div class="team-photo-side">
+                            <span class="team-tag">TECHNICAL</span>
+                            <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=800&q=80" alt="Rahul Verma">
+                            <div class="team-name-overlay">
+                                <h3>Rahul Verma</h3>
+                                <p>Technical Lead</p>
+                            </div>
+                        </div>
+                        <div class="team-aims-panel">
+                            <h2>EXPERTISE & GOALS</h2>
+                            <div class="aims-list">
+                                <div class="aim-item"><div class="aim-number">1</div><div class="aim-text">Leading digital twin architecture implementations</div></div>
+                                <div class="aim-item"><div class="aim-number">2</div><div class="aim-text">Overseeing automated testing protocols</div></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Member 7 -->
+                <div class="team-expand-card">
+                    <div class="card-inner-split">
+                        <div class="team-photo-side">
+                            <span class="team-tag">OUTREACH</span>
+                            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=800&q=80" alt="Ananya Iyer">
+                            <div class="team-name-overlay">
+                                <h3>Ananya Iyer</h3>
+                                <p>Communications Lead</p>
+                            </div>
+                        </div>
+                        <div class="team-aims-panel">
+                            <h2>EXPERTISE & GOALS</h2>
+                            <div class="aims-list">
+                                <div class="aim-item"><div class="aim-number">1</div><div class="aim-text">Managing stakeholder relations and public events</div></div>
+                                <div class="aim-item"><div class="aim-number">2</div><div class="aim-text">Driving national awareness campaigns</div></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Member 8 -->
+                <div class="team-expand-card">
+                    <div class="card-inner-split">
+                        <div class="team-photo-side">
+                            <span class="team-tag">SPECIALIST</span>
+                            <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=800&q=80" alt="Vikram Malhotra">
+                            <div class="team-name-overlay">
+                                <h3>Vikram Malhotra</h3>
+                                <p>Energy Specialist</p>
+                            </div>
+                        </div>
+                        <div class="team-aims-panel">
+                            <h2>EXPERTISE & GOALS</h2>
+                            <div class="aims-list">
+                                <div class="aim-item"><div class="aim-number">1</div><div class="aim-text">Advising on smart power grid integrations</div></div>
+                                <div class="aim-item"><div class="aim-number">2</div><div class="aim-text">Analyzing sustainable fuel efficiency metrics</div></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Breadcrumb Navigation -->
+        <nav class="breadcrumb-container" aria-label="Breadcrumb">
+            <div class="container">
+                <ol class="breadcrumb-list">
+                    <li><a href="index.html">Home</a></li>
+                    <li class="separator">/</li>
+                    <li class="active-crumb">Core Team</li>
+                </ol>
+            </div>
+        </nav>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-left">
+                <div class="footer-brand">
+                    <span>IIT Bombay Honeywell</span>
+                    <span>Centre of Excellence for Future Skills & Innovation </span>
+                </div>
+                <div class="footer-subtitle">
+                    Get the latest updates, news, and event updates directly to your inbox.
+                </div>
+                <form class="subscribe-form" onsubmit="event.preventDefault();">
+                    <input type="email" placeholder="youremail@mail.com" required>
+                    <button type="submit">Send</button>
+                </form>
+
+                <div class="social-icons">
+                    <a href="#" class="social-btn"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" class="social-btn"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#" class="social-btn"><i class="fa-regular fa-envelope"></i></a>
+                    <a href="#" class="social-btn"><i class="fa-solid fa-phone"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-right">
+                <a href="#" class="back-to-top">Back to Top <i class="fa-solid fa-arrow-up"></i></a>
+                <ul class="footer-nav">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Product</a></li>
+                    <li><a href="#">Blogs</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+                <div class="footer-legal">
+                    <a href="#">Privacy and Policy</a>
+                    <a href="#">Term and Condition</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
+
+```

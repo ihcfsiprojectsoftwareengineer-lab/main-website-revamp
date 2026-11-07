@@ -76,34 +76,286 @@
         "howToReach": { "venue": "IIT Bombay" }
       }
     },
-    {
+
+
+{
       "id": "campus-sustainability-awareness-nss",
-      "type": "workshop",
-      "title": "Campus Sustainability Awareness Session with NSS",
-      "startDate": "2026-10-07",
-      "venue": "IIT Bombay",
+      "type": "dialouge",
+      "title": "2nd Industry-Student Dialouge Series with Guarav Sen",
+      "startDate": "2026-06-12",
+      "venue": "CTARA Conference Room, IIT Bombay",
       "gallery": [
         { "src": "assets/events/campus-nss/1.svg", "caption": "Sample photo 1 – replace with a real image" },
         { "src": "assets/events/campus-nss/2.svg", "caption": "Sample photo 2" },
         { "src": "assets/events/campus-nss/3.svg", "caption": "Sample photo 3" },
         { "src": "assets/events/campus-nss/4.svg", "caption": "Sample photo 4" }
       ],
-      "details": {}
+      "details": {
+
+
+        "sections": [
+          {
+            "heading": "About the Workshop",
+            "paragraphs": [
+              "The Entrepreneurial Exposure Workshop was organized by the IIT Bombay–Honeywell Centre of Excellence for Future Skills & Innovation (IHCFSI) for the winners and runner-ups of the Sustainability Innovation Challenge. The workshop brought together aspiring innovators for a day of expert talks, founder interactions, and discussions on entrepreneurship, startup ecosystems, innovation pathways, and commercialization. Participants also explored innovation facilities at IIT Bombay, gaining valuable exposure to the institute's entrepreneurial ecosystem."
+            ]
+          }
+        ]
+
+
+
+
+      }
+    },
+
+
+{
+      "id": "campus-sustainability-awareness-nss",
+      "type": "dialouge",
+      "title": "1st Industry-Student Dialouge Series with Krishna Mani",
+      "startDate": "2026-06-12",
+      "venue": "CTARA Conference Room, IIT Bombay",
+      "gallery": [
+        { "src": "assets/events/campus-nss/1.svg", "caption": "Sample photo 1 – replace with a real image" },
+        { "src": "assets/events/campus-nss/2.svg", "caption": "Sample photo 2" },
+        { "src": "assets/events/campus-nss/3.svg", "caption": "Sample photo 3" },
+        { "src": "assets/events/campus-nss/4.svg", "caption": "Sample photo 4" }
+      ],
+      "details": {
+
+
+        "sections": [
+          {
+            "heading": "About the Workshop",
+            "paragraphs": [
+              "The Entrepreneurial Exposure Workshop was organized by the IIT Bombay–Honeywell Centre of Excellence for Future Skills & Innovation (IHCFSI) for the winners and runner-ups of the Sustainability Innovation Challenge. The workshop brought together aspiring innovators for a day of expert talks, founder interactions, and discussions on entrepreneurship, startup ecosystems, innovation pathways, and commercialization. Participants also explored innovation facilities at IIT Bombay, gaining valuable exposure to the institute's entrepreneurial ecosystem."
+            ]
+          }
+        ]
+
+
+
+
+      }
+    },
+
+
+
+    {
+      "id": "campus-sustainability-awareness-nss",
+      "type": "workshop",
+      "title": "Entrepreneurial Exposure Workshop",
+      "startDate": "2026-06-12",
+      "venue": "CTARA Conference Room, IIT Bombay",
+      "gallery": [
+        { "src": "assets/events/campus-nss/1.svg", "caption": "Sample photo 1 – replace with a real image" },
+        { "src": "assets/events/campus-nss/2.svg", "caption": "Sample photo 2" },
+        { "src": "assets/events/campus-nss/3.svg", "caption": "Sample photo 3" },
+        { "src": "assets/events/campus-nss/4.svg", "caption": "Sample photo 4" }
+      ],
+      "details": {
+
+
+        "sections": [
+          {
+            "heading": "About the Workshop",
+            "paragraphs": [
+              "The Entrepreneurial Exposure Workshop was organized by the IIT Bombay–Honeywell Centre of Excellence for Future Skills & Innovation (IHCFSI) for the winners and runner-ups of the Sustainability Innovation Challenge. The workshop brought together aspiring innovators for a day of expert talks, founder interactions, and discussions on entrepreneurship, startup ecosystems, innovation pathways, and commercialization. Participants also explored innovation facilities at IIT Bombay, gaining valuable exposure to the institute's entrepreneurial ecosystem."
+            ]
+          }
+        ]
+
+
+
+
+      }
+    },
+
+
+    {
+      "id": "campus-sustainability-awareness-nss",
+      "type": "workshop",
+      "title": "Future Skills for Sustainable Development - Mumbai",
+      "startDate": "2026-06-12",
+      "venue": "CTARA Conference Room, IIT Bombay",
+      "gallery": [
+        { "src": "assets/events/campus-nss/1.svg", "caption": "Sample photo 1 – replace with a real image" },
+        { "src": "assets/events/campus-nss/2.svg", "caption": "Sample photo 2" },
+        { "src": "assets/events/campus-nss/3.svg", "caption": "Sample photo 3" },
+        { "src": "assets/events/campus-nss/4.svg", "caption": "Sample photo 4" }
+      ],
+      "details": {
+
+
+        "sections": [
+          {
+            "heading": "About the Workshop",
+            "paragraphs": [
+              "The Entrepreneurial Exposure Workshop was organized by the IIT Bombay–Honeywell Centre of Excellence for Future Skills & Innovation (IHCFSI) for the winners and runner-ups of the Sustainability Innovation Challenge. The workshop brought together aspiring innovators for a day of expert talks, founder interactions, and discussions on entrepreneurship, startup ecosystems, innovation pathways, and commercialization. Participants also explored innovation facilities at IIT Bombay, gaining valuable exposure to the institute's entrepreneurial ecosystem."
+            ]
+          }
+        ]
+
+
+
+
+      }
+    },
+
+
+    {
+      "id": "campus-sustainability-awareness-nss",
+      "type": "workshop",
+      "title": "Future Skills for Sustainable Development - Nagpur",
+      "startDate": "2026-06-12",
+      "venue": "CTARA Conference Room, IIT Bombay",
+      "gallery": [
+        { "src": "assets/events/campus-nss/1.svg", "caption": "Sample photo 1 – replace with a real image" },
+        { "src": "assets/events/campus-nss/2.svg", "caption": "Sample photo 2" },
+        { "src": "assets/events/campus-nss/3.svg", "caption": "Sample photo 3" },
+        { "src": "assets/events/campus-nss/4.svg", "caption": "Sample photo 4" }
+      ],
+      "details": {
+
+
+        "sections": [
+          {
+            "heading": "About the Workshop",
+            "paragraphs": [
+              "The Entrepreneurial Exposure Workshop was organized by the IIT Bombay–Honeywell Centre of Excellence for Future Skills & Innovation (IHCFSI) for the winners and runner-ups of the Sustainability Innovation Challenge. The workshop brought together aspiring innovators for a day of expert talks, founder interactions, and discussions on entrepreneurship, startup ecosystems, innovation pathways, and commercialization. Participants also explored innovation facilities at IIT Bombay, gaining valuable exposure to the institute's entrepreneurial ecosystem."
+            ]
+          }
+        ]
+
+
+
+
+      }
+    },
+
+
+     {
+      "id": "campus-sustainability-awareness-nss",
+      "type": "workshop",
+      "title": "Future Skills for Sustainable Development - Pune",
+      "startDate": "2026-06-12",
+      "venue": "CTARA Conference Room, IIT Bombay",
+      "gallery": [
+        { "src": "assets/events/campus-nss/1.svg", "caption": "Sample photo 1 – replace with a real image" },
+        { "src": "assets/events/campus-nss/2.svg", "caption": "Sample photo 2" },
+        { "src": "assets/events/campus-nss/3.svg", "caption": "Sample photo 3" },
+        { "src": "assets/events/campus-nss/4.svg", "caption": "Sample photo 4" }
+      ],
+      "details": {
+
+
+        "sections": [
+          {
+            "heading": "About the Workshop",
+            "paragraphs": [
+              "The Entrepreneurial Exposure Workshop was organized by the IIT Bombay–Honeywell Centre of Excellence for Future Skills & Innovation (IHCFSI) for the winners and runner-ups of the Sustainability Innovation Challenge. The workshop brought together aspiring innovators for a day of expert talks, founder interactions, and discussions on entrepreneurship, startup ecosystems, innovation pathways, and commercialization. Participants also explored innovation facilities at IIT Bombay, gaining valuable exposure to the institute's entrepreneurial ecosystem."
+            ]
+          }
+        ]
+
+
+
+
+      }
+    },
+
+
+    {
+      "id": "campus-sustainability-awareness-nss",
+      "type": "workshop",
+      "title": "Future Skills for Sustainable Development - Chhatrapati Sambhajinagar",
+      "startDate": "2026-06-12",
+      "venue": "CTARA Conference Room, IIT Bombay",
+      "gallery": [
+        { "src": "assets/events/campus-nss/1.svg", "caption": "Sample photo 1 – replace with a real image" },
+        { "src": "assets/events/campus-nss/2.svg", "caption": "Sample photo 2" },
+        { "src": "assets/events/campus-nss/3.svg", "caption": "Sample photo 3" },
+        { "src": "assets/events/campus-nss/4.svg", "caption": "Sample photo 4" }
+      ],
+      "details": {
+
+
+        "sections": [
+          {
+            "heading": "About the Workshop",
+            "paragraphs": [
+              "The Entrepreneurial Exposure Workshop was organized by the IIT Bombay–Honeywell Centre of Excellence for Future Skills & Innovation (IHCFSI) for the winners and runner-ups of the Sustainability Innovation Challenge. The workshop brought together aspiring innovators for a day of expert talks, founder interactions, and discussions on entrepreneurship, startup ecosystems, innovation pathways, and commercialization. Participants also explored innovation facilities at IIT Bombay, gaining valuable exposure to the institute's entrepreneurial ecosystem."
+            ]
+          }
+        ]
+
+
+
+
+      }
+    },
+
+
+    {
+      "id": "campus-sustainability-awareness-nss",
+      "type": "workshop",
+      "title": "Future Skills for Sustainable Development - Pandharpur",
+      "startDate": "2026-06-12",
+      "venue": "CTARA Conference Room, IIT Bombay",
+      "gallery": [
+        { "src": "assets/events/campus-nss/1.svg", "caption": "Sample photo 1 – replace with a real image" },
+        { "src": "assets/events/campus-nss/2.svg", "caption": "Sample photo 2" },
+        { "src": "assets/events/campus-nss/3.svg", "caption": "Sample photo 3" },
+        { "src": "assets/events/campus-nss/4.svg", "caption": "Sample photo 4" }
+      ],
+      "details": {
+
+
+        "sections": [
+          {
+            "heading": "About the Workshop",
+            "paragraphs": [
+              "The Entrepreneurial Exposure Workshop was organized by the IIT Bombay–Honeywell Centre of Excellence for Future Skills & Innovation (IHCFSI) for the winners and runner-ups of the Sustainability Innovation Challenge. The workshop brought together aspiring innovators for a day of expert talks, founder interactions, and discussions on entrepreneurship, startup ecosystems, innovation pathways, and commercialization. Participants also explored innovation facilities at IIT Bombay, gaining valuable exposure to the institute's entrepreneurial ecosystem."
+            ]
+          }
+        ]
+
+
+
+
+      }
     },
 
     {
       "id": "campus-sustainability-awareness-nss",
       "type": "workshop",
-      "title": "Campus Sustainability Awareness Session with NSS",
-      "startDate": "2026-10-07",
-      "venue": "IIT Bombay",
+      "title": "Future Skills for Sustainable Development - Kolhapur",
+      "startDate": "2026-06-12",
+      "venue": "CTARA Conference Room, IIT Bombay",
       "gallery": [
         { "src": "assets/events/campus-nss/1.svg", "caption": "Sample photo 1 – replace with a real image" },
         { "src": "assets/events/campus-nss/2.svg", "caption": "Sample photo 2" },
         { "src": "assets/events/campus-nss/3.svg", "caption": "Sample photo 3" },
         { "src": "assets/events/campus-nss/4.svg", "caption": "Sample photo 4" }
       ],
-      "details": {}
+      "details": {
+
+
+        "sections": [
+          {
+            "heading": "About the Workshop",
+            "paragraphs": [
+              "The Entrepreneurial Exposure Workshop was organized by the IIT Bombay–Honeywell Centre of Excellence for Future Skills & Innovation (IHCFSI) for the winners and runner-ups of the Sustainability Innovation Challenge. The workshop brought together aspiring innovators for a day of expert talks, founder interactions, and discussions on entrepreneurship, startup ecosystems, innovation pathways, and commercialization. Participants also explored innovation facilities at IIT Bombay, gaining valuable exposure to the institute's entrepreneurial ecosystem."
+            ]
+          }
+        ]
+
+
+
+
+      }
     }
+
+    
   ]
 }

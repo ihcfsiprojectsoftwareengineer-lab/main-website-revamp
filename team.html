@@ -11,8 +11,91 @@
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="team.css">
     <script src="index.js" defer></script>
     <style>
+
+/* 4-Column Grid Layout (4 per row) */
+        .team-grid-4x4 {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+        }
+
+        /* Main Outer Card Container */
+        .team-card-ref {
+            background-color: #ffffff;
+            border-radius: 28px;
+            padding: 12px; /* Adds space around the image section to create the framed look */
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+            border: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        body.dark-mode .team-card-ref {
+            background-color: var(--card-bg);
+        }
+
+        .team-card-ref:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 14px 32px rgba(0, 0, 0, 0.12);
+        }
+
+        /* Top Inset Image Box with soft border & rounded corners */
+        .team-card-img-wrap {
+            background-color: #eaf8c9; /* Pale green background */
+            width: 100%;
+            height: 240px;
+            border-radius: 20px;       /* Inner rounded corners for the photo area */
+            overflow: hidden;
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+        }
+
+        body.dark-mode .team-card-img-wrap {
+            background-color: #23311e;
+        }
+
+        .team-card-img-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: top center;
+        }
+
+        /* Bottom Text Info Box */
+        .team-card-info {
+            padding: 16px 8px 8px 8px;
+            background-color: transparent;
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .team-card-name {
+            font-size: 19px;
+            font-weight: 700;
+            color: #1a1a1a;
+            line-height: 1.2;
+        }
+
+        body.dark-mode .team-card-name {
+            color: var(--text-color);
+        }
+
+        .team-card-role {
+            font-size: 14px;
+            font-weight: 500;
+            color: #777777;
+        }
+
+        body.dark-mode .team-card-role {
+            color: var(--text-muted);
+        }
+
         /* --- Team Page Layout Styles (Matching Reference) --- */
         .team-section {
             margin: 40px 0 70px;
@@ -35,124 +118,90 @@
             font-size: 16px;
         }
 
-        /* 4-Box Grid layout */
-        .team-grid-container {
+        /* 4-Column Grid Layout (4 per row) */
+        .team-grid-4x4 {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 30px;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
         }
 
-        /* Each Team Card Split Structure */
-        .team-split-card {
+        /* Individual Card matching reference design */
+        .team-card-ref {
             background-color: var(--card-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 28px;
+            border-radius: 20px;
             overflow: hidden;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            box-shadow: 0 6px 20px rgba(0,0,0,0.04);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+            border: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
-            position: relative;
         }
 
-        .team-split-card:hover {
+        .team-card-ref:hover {
             transform: translateY(-5px);
-            box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
         }
 
-        /* Left Image Box */
-        .team-img-box {
-            position: relative;
-            height: 100%;
-            min-height: 280px;
+        /* Top image wrapper with light yellowish-green background matching reference image */
+        .team-card-img-wrap {
+            background-color: #f1f7d5; 
+            width: 100%;
+            height: 240px;
+            overflow: hidden;
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
         }
 
-        .team-img-box img {
+        body.dark-mode .team-card-img-wrap {
+            background-color: #27351b;
+        }
+
+        .team-card-img-wrap img {
             width: 100%;
             height: 100%;
             object-fit: cover;
+            object-position: top center;
         }
 
-        .team-tag-badge {
-            position: absolute;
-            top: 15px;
-            left: 15px;
-            background: rgba(0, 0, 0, 0.6);
-            backdrop-filter: blur(6px);
-            color: #ffffff;
-            font-size: 11px;
-            font-weight: 600;
-            padding: 4px 12px;
-            border-radius: 20px;
-            letter-spacing: 0.5px;
-        }
-
-        /* Right Side Content Panel (Expands/Shows on Hover or Click) */
-        .team-info-panel {
-            padding: 30px 25px;
+        /* Bottom text info box */
+        .team-card-info {
+            padding: 18px 20px;
+            background-color: var(--card-bg);
             display: flex;
             flex-direction: column;
-            justify-content: center;
-            background-color: #f4f7f6;
-            transition: background-color 0.3s ease;
+            gap: 4px;
         }
 
-        body.dark-mode .team-info-panel {
-            background-color: #1a2638;
-        }
-
-        .team-info-panel h3 {
-            font-size: 22px;
+        .team-card-name {
+            font-size: 18px;
             font-weight: 700;
             color: var(--text-color);
-            margin-bottom: 4px;
             line-height: 1.2;
         }
 
-        .team-role {
-            font-size: 14px;
-            font-weight: 600;
-            color: var(--primary-color);
-            margin-bottom: 15px;
-        }
-
-        .team-bio {
+        .team-card-role {
             font-size: 13.5px;
+            font-weight: 500;
             color: var(--text-muted);
-            line-height: 1.5;
-            margin-bottom: 20px;
         }
 
-        .team-contact-link {
-            font-size: 13px;
-            color: var(--text-color);
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            font-weight: 600;
-        }
-
-        .team-contact-link i {
-            color: var(--primary-color);
-        }
-
-        .team-contact-link:hover {
-            color: var(--primary-color);
-        }
-
-        @media (max-width: 992px) {
-            .team-grid-container {
-                grid-template-columns: 1fr;
+        /* Responsive Breakpoints */
+        @media (max-width: 1100px) {
+            .team-grid-4x4 {
+                grid-template-columns: repeat(3, 1fr);
             }
         }
 
-        @media (max-width: 550px) {
-            .team-split-card {
-                grid-template-columns: 1fr;
+        @media (max-width: 768px) {
+            .team-grid-4x4 {
+                grid-template-columns: repeat(2, 1fr);
             }
-            .team-img-box {
-                height: 240px;
+        }
+
+        @media (max-width: 480px) {
+            .team-grid-4x4 {
+                grid-template-columns: 1fr;
             }
         }
     </style>
@@ -192,7 +241,341 @@
     <!-- Main Content -->
     <main class="container">
 
-        <!-- Breadcrumb Navigation -->
+
+                <section class="team-section">
+            <div class="section-header-box">
+                <h1>Meet Our Core Team</h1>
+                <p>Leadership, research management, and technical experts guiding the Centre of Excellence.</p>
+            </div>
+
+            <!-- Expanding Accordion Row 1 -->
+            <div class="team-accordion-container">
+                <!-- Member 1 -->
+                <div class="team-expand-card">
+                    <div class="card-inner-split">
+                        <div class="team-photo-side">
+                            <span class="team-tag">LEADERSHIP</span>
+                            <img src="https://images.unsplash.com/photo-1592417817098-8f3d6eb17985?auto=format&fit=crop&w=800&q=80" alt="Sophia Nguyen">
+                            <div class="team-name-overlay">
+                                <h3>Sophia Nguyen</h3>
+                                <p>Sustainability Manager</p>
+                            </div>
+                        </div>
+                        <div class="team-aims-panel">
+                            <h2>EXPERTISE & GOALS</h2>
+                            <div class="aims-list">
+                                <div class="aim-item"><div class="aim-number">1</div><div class="aim-text">Leading campus-wide clean energy transition programs</div></div>
+                                <div class="aim-item"><div class="aim-number">2</div><div class="aim-text">Overseeing 50+ interdisciplinary research projects</div></div>
+                                <div class="aim-item"><div class="aim-number">3</div><div class="aim-text">Building strategic industry & government partnerships</div></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Member 2 -->
+                <div class="team-expand-card">
+                    <div class="card-inner-split">
+                        <div class="team-photo-side">
+                            <span class="team-tag">FACULTY</span>
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=800&q=80" alt="Dr. Alok Sharma">
+                            <div class="team-name-overlay">
+                                <h3>Dr. Alok Sharma</h3>
+                                <p>Faculty Coordinator</p>
+                            </div>
+                        </div>
+                        <div class="team-aims-panel">
+                            <h2>EXPERTISE & GOALS</h2>
+                            <div class="aims-list">
+                                <div class="aim-item"><div class="aim-number">1</div><div class="aim-text">Designing advanced solar & grid simulation courses</div></div>
+                                <div class="aim-item"><div class="aim-number">2</div><div class="aim-text">Directing academic curriculum for students</div></div>
+                                <div class="aim-item"><div class="aim-number">3</div><div class="aim-text">Publishing translational clean-tech research papers</div></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Member 3 -->
+                <div class="team-expand-card">
+                    <div class="card-inner-split">
+                        <div class="team-photo-side">
+                            <span class="team-tag">INNOVATION</span>
+                            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=800&q=80" alt="Ms. Jaya K">
+                            <div class="team-name-overlay">
+                                <h3>Ms. Jaya K</h3>
+                                <p>Senior Associate</p>
+                            </div>
+                        </div>
+                        <div class="team-aims-panel">
+                            <h2>EXPERTISE & GOALS</h2>
+                            <div class="aims-list">
+                                <div class="aim-item"><div class="aim-number">1</div><div class="aim-text">Convening national hackathons & innovation forums</div></div>
+                                <div class="aim-item"><div class="aim-number">2</div><div class="aim-text">Providing seed grant funding for student winners</div></div>
+                                <div class="aim-item"><div class="aim-number">3</div><div class="aim-text">Incubating high-potential clean-tech startups</div></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Member 4 -->
+                <div class="team-expand-card">
+                    <div class="card-inner-split">
+                        <div class="team-photo-side">
+                            <span class="team-tag">TECHNICAL</span>
+                            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=800&q=80" alt="Dr. Subrata Jana">
+                            <div class="team-name-overlay">
+                                <h3>Dr. Subrata Jana</h3>
+                                <p>Program Manager</p>
+                            </div>
+                        </div>
+                        <div class="team-aims-panel">
+                            <h2>EXPERTISE & GOALS</h2>
+                            <div class="aims-list">
+                                <div class="aim-item"><div class="aim-number">1</div><div class="aim-text">Developing mathematical simulation models</div></div>
+                                <div class="aim-item"><div class="aim-number">2</div><div class="aim-text">Optimizing industrial safety & infrastructure</div></div>
+                                <div class="aim-item"><div class="aim-number">3</div><div class="aim-text">Deploying smart grid IoT sensor networks</div></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+
+
+
+        <!-- Advisory Team Section -->
+
+        <section class="team-section">
+
+<div class="section-header-box">
+                <h1>Meet Our Advisory Team</h1>
+                <p>Leadership, research management, and technical experts guiding the Centre of Excellence.</p>
+            </div>
+
+
+                        <!-- 4x4 Grid Container -->
+            <div class="team-grid-4x4">
+                
+                <!-- Member 1 -->
+                <div class="team-card-ref">
+                    <div class="team-card-img-wrap">
+                        <img src="https://images.unsplash.com/photo-1592417817098-8f3d6eb17985?auto=format&fit=crop&w=600&q=80" alt="Sophia Nguyen">
+                    </div>
+                    <div class="team-card-info">
+                        <div class="team-card-name">Sophia Nguyen</div>
+                        <div class="team-card-role">Sustainability Manager</div>
+                    </div>
+                </div>
+
+                <!-- Member 2 -->
+                <div class="team-card-ref">
+                    <div class="team-card-img-wrap">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=600&q=80" alt="Dr. Alok Sharma">
+                    </div>
+                    <div class="team-card-info">
+                        <div class="team-card-name">Dr. Alok Sharma</div>
+                        <div class="team-card-role">Faculty Coordinator</div>
+                    </div>
+                </div>
+
+                <!-- Member 3 -->
+                <div class="team-card-ref">
+                    <div class="team-card-img-wrap">
+                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=600&q=80" alt="Ms. Jaya K">
+                    </div>
+                    <div class="team-card-info">
+                        <div class="team-card-name">Ms. Jaya K</div>
+                        <div class="team-card-role">Senior Associate – Innovation</div>
+                    </div>
+                </div>
+
+                <!-- Member 4 -->
+                <div class="team-card-ref">
+                    <div class="team-card-img-wrap">
+                        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=600&q=80" alt="Dr. Subrata Jana">
+                    </div>
+                    <div class="team-card-info">
+                        <div class="team-card-name">Dr. Subrata Jana</div>
+                        <div class="team-card-role">Program Manager – Nuclear Eng.</div>
+                    </div>
+                </div>
+
+                <!-- Member 5 -->
+                <div class="team-card-ref">
+                    <div class="team-card-img-wrap">
+                        <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=600&q=80" alt="Dr. Priya Menon">
+                    </div>
+                    <div class="team-card-info">
+                        <div class="team-card-name">Dr. Priya Menon</div>
+                        <div class="team-card-role">Research Fellow Coordinator</div>
+                    </div>
+                </div>
+
+                <!-- Member 6 -->
+                <div class="team-card-ref">
+                    <div class="team-card-img-wrap">
+                        <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=600&q=80" alt="Rahul Verma">
+                    </div>
+                    <div class="team-card-info">
+                        <div class="team-card-name">Rahul Verma</div>
+                        <div class="team-card-role">Technical Lead – Digital Twins</div>
+                    </div>
+                </div>
+
+                <!-- Member 7 -->
+                <div class="team-card-ref">
+                    <div class="team-card-img-wrap">
+                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=600&q=80" alt="Ananya Iyer">
+                    </div>
+                    <div class="team-card-info">
+                        <div class="team-card-name">Ananya Iyer</div>
+                        <div class="team-card-role">Outreach & Communications Lead</div>
+                    </div>
+                </div>
+
+                <!-- Member 8 -->
+                <div class="team-card-ref">
+                    <div class="team-card-img-wrap">
+                        <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=600&q=80" alt="Vikram Malhotra">
+                    </div>
+                    <div class="team-card-info">
+                        <div class="team-card-name">Vikram Malhotra</div>
+                        <div class="team-card-role">Energy Systems Specialist</div>
+                    </div>
+                </div>
+
+                <!-- Member 9 -->
+                <div class="team-card-ref">
+                    <div class="team-card-img-wrap">
+                        <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=600&q=80" alt="Neha Deshmukh">
+                    </div>
+                    <div class="team-card-info">
+                        <div class="team-card-name">Neha Deshmukh</div>
+                        <div class="team-card-role">Operations & Grants Manager</div>
+                    </div>
+                </div>
+
+            </div>
+
+</section>
+
+
+        <!-- Operation Team Section -->
+        <section class="team-section">
+            <div class="section-header-box">
+                <h1>Meet Our Operational Team</h1>
+                <p>Leadership, research management, and technical experts guiding the Centre of Excellence.</p>
+            </div>
+
+            <!-- 4x4 Grid Container -->
+            <div class="team-grid-4x4">
+                
+                <!-- Member 1 -->
+                <div class="team-card-ref">
+                    <div class="team-card-img-wrap">
+                        <img src="https://images.unsplash.com/photo-1592417817098-8f3d6eb17985?auto=format&fit=crop&w=600&q=80" alt="Sophia Nguyen">
+                    </div>
+                    <div class="team-card-info">
+                        <div class="team-card-name">Sophia Nguyen</div>
+                        <div class="team-card-role">Sustainability Manager</div>
+                    </div>
+                </div>
+
+                <!-- Member 2 -->
+                <div class="team-card-ref">
+                    <div class="team-card-img-wrap">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=600&q=80" alt="Dr. Alok Sharma">
+                    </div>
+                    <div class="team-card-info">
+                        <div class="team-card-name">Dr. Alok Sharma</div>
+                        <div class="team-card-role">Faculty Coordinator</div>
+                    </div>
+                </div>
+
+                <!-- Member 3 -->
+                <div class="team-card-ref">
+                    <div class="team-card-img-wrap">
+                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=600&q=80" alt="Ms. Jaya K">
+                    </div>
+                    <div class="team-card-info">
+                        <div class="team-card-name">Ms. Jaya K</div>
+                        <div class="team-card-role">Senior Associate – Innovation</div>
+                    </div>
+                </div>
+
+                <!-- Member 4 -->
+                <div class="team-card-ref">
+                    <div class="team-card-img-wrap">
+                        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=600&q=80" alt="Dr. Subrata Jana">
+                    </div>
+                    <div class="team-card-info">
+                        <div class="team-card-name">Dr. Subrata Jana</div>
+                        <div class="team-card-role">Program Manager – Nuclear Eng.</div>
+                    </div>
+                </div>
+
+                <!-- Member 5 -->
+                <div class="team-card-ref">
+                    <div class="team-card-img-wrap">
+                        <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=600&q=80" alt="Dr. Priya Menon">
+                    </div>
+                    <div class="team-card-info">
+                        <div class="team-card-name">Dr. Priya Menon</div>
+                        <div class="team-card-role">Research Fellow Coordinator</div>
+                    </div>
+                </div>
+
+                <!-- Member 6 -->
+                <div class="team-card-ref">
+                    <div class="team-card-img-wrap">
+                        <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=600&q=80" alt="Rahul Verma">
+                    </div>
+                    <div class="team-card-info">
+                        <div class="team-card-name">Rahul Verma</div>
+                        <div class="team-card-role">Technical Lead – Digital Twins</div>
+                    </div>
+                </div>
+
+                <!-- Member 7 -->
+                <div class="team-card-ref">
+                    <div class="team-card-img-wrap">
+                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=600&q=80" alt="Ananya Iyer">
+                    </div>
+                    <div class="team-card-info">
+                        <div class="team-card-name">Ananya Iyer</div>
+                        <div class="team-card-role">Outreach & Communications Lead</div>
+                    </div>
+                </div>
+
+                <!-- Member 8 -->
+                <div class="team-card-ref">
+                    <div class="team-card-img-wrap">
+                        <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=600&q=80" alt="Vikram Malhotra">
+                    </div>
+                    <div class="team-card-info">
+                        <div class="team-card-name">Vikram Malhotra</div>
+                        <div class="team-card-role">Energy Systems Specialist</div>
+                    </div>
+                </div>
+
+                <!-- Member 9 -->
+                <div class="team-card-ref">
+                    <div class="team-card-img-wrap">
+                        <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=600&q=80" alt="Neha Deshmukh">
+                    </div>
+                    <div class="team-card-info">
+                        <div class="team-card-name">Neha Deshmukh</div>
+                        <div class="team-card-role">Operations & Grants Manager</div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+
+                <!-- Breadcrumb Navigation -->
         <nav class="breadcrumb-container" aria-label="Breadcrumb">
             <ol class="breadcrumb-list">
                 <li><a href="index.html">Home</a></li>
@@ -200,75 +583,6 @@
                 <li class="active-crumb">Core Team</li>
             </ol>
         </nav>
-
-        <!-- Team Section -->
-        <section class="team-section">
-            <div class="section-header-box">
-                <h1>Meet Our Core Team</h1>
-                <p>Leadership, research management, and technical experts guiding the Centre of Excellence.</p>
-            </div>
-
-            <!-- 4 Grid Boxes -->
-            <div class="team-grid-container">
-                
-                <!-- Team Member 1 -->
-                <div class="team-split-card">
-                    <div class="team-img-box">
-                        <span class="team-tag-badge">CORE LEADERSHIP</span>
-                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=600&q=80" alt="Dr. Alok Sharma">
-                    </div>
-                    <div class="team-info-panel">
-                        <h3>Dr. Alok Sharma</h3>
-                        <div class="team-role">Faculty Coordinator</div>
-                        <p class="team-bio">Leading strategic research initiatives, clean energy partnerships, and academic curriculum oversight at IIT Bombay.</p>
-                        <a href="mailto:alok.sharma@iitb.ac.in" class="team-contact-link"><i class="fa-regular fa-envelope"></i> alok.sharma@iitb.ac.in</a>
-                    </div>
-                </div>
-
-                <!-- Team Member 2 -->
-                <div class="team-split-card">
-                    <div class="team-img-box">
-                        <span class="team-tag-badge">INNOVATION</span>
-                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=600&q=80" alt="Ms. Jaya K">
-                    </div>
-                    <div class="team-info-panel">
-                        <h3>Ms. Jaya K</h3>
-                        <div class="team-role">Senior Associate – Learning & Innovation</div>
-                        <p class="team-bio">Managing skill development programs, hackathons, and multi-disciplinary industry training frameworks.</p>
-                        <a href="mailto:30006497@iitb.ac.in" class="team-contact-link"><i class="fa-regular fa-envelope"></i> 30006497@iitb.ac.in</a>
-                    </div>
-                </div>
-
-                <!-- Team Member 3 -->
-                <div class="team-split-card">
-                    <div class="team-img-box">
-                        <span class="team-tag-badge">TECHNICAL</span>
-                        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=600&q=80" alt="Dr. Subrata Jana">
-                    </div>
-                    <div class="team-info-panel">
-                        <h3>Dr. Subrata Jana</h3>
-                        <div class="team-role">Program Manager – Nuclear Engineering</div>
-                        <p class="team-bio">Spearheading digital twin simulations, thermodynamic modeling, and industrial infrastructure safety practices.</p>
-                        <a href="mailto:30007722@iitb.ac.in" class="team-contact-link"><i class="fa-regular fa-envelope"></i> 30007722@iitb.ac.in</a>
-                    </div>
-                </div>
-
-                <!-- Team Member 4 -->
-                <div class="team-split-card">
-                    <div class="team-img-box">
-                        <span class="team-tag-badge">OPERATIONS</span>
-                        <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=600&q=80" alt="Dr. Priya Menon">
-                    </div>
-                    <div class="team-info-panel">
-                        <h3>Dr. Priya Menon</h3>
-                        <div class="team-role">Research Fellow Coordinator</div>
-                        <p class="team-bio">Facilitating collaborative field research, fellowship grants, and community outreach engagements across sectors.</p>
-                        <a href="mailto:priya.menon@iitb.ac.in" class="team-contact-link"><i class="fa-regular fa-envelope"></i> priya.menon@iitb.ac.in</a>
-                    </div>
-                </div>
-
-            </div>
-        </section>
 
     </main>
 
