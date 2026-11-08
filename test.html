@@ -1,0 +1,176 @@
+/* --- Vision & Mission Section (Equal 50/50 Split Grid) --- */
+.vision-mission-section {
+    margin: 60px 0;
+}
+
+.vm-card-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Equal width distribution */
+    gap: 30px;
+}
+
+.vm-card {
+    position: relative;
+    background-color: var(--card-bg, #ffffff);
+    border: 1px solid var(--border-color, #e2e8f0);
+    border-radius: 28px;
+    padding: 36px 32px 32px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.vm-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+}
+
+/* Top-right corner cutout & circular arrow button */
+.vm-action-btn {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background-color: #00c896; /* Teal background accent matching image */
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 18px;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.vm-action-btn:hover {
+    transform: scale(1.08);
+    background-color: #00b084;
+}
+
+/* Header & Icon Area */
+.vm-card-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 20px;
+}
+
+.vm-icon-box {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary-color, #004F9F);
+}
+
+.vm-card h2 {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--text-color, #1a1a1a);
+    margin: 0;
+}
+
+.vm-card p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--text-muted, #4a5568);
+    margin-bottom: 24px;
+}
+
+/* Footer link (Learn more arrow) */
+.vm-card-footer {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--text-color, #1a1a1a);
+    text-decoration: none;
+}
+
+.vm-card-footer i {
+    font-size: 12px;
+    transition: transform 0.2s ease;
+}
+
+.vm-card-footer:hover i {
+    transform: translateX(4px);
+}
+
+/* Dark mode compatibility */
+body.dark-mode .vm-card {
+    background-color: #1e293b;
+    border-color: #334155;
+}
+
+body.dark-mode .vm-card h2,
+body.dark-mode .vm-card-footer {
+    color: #f8fafc;
+}
+
+body.dark-mode .vm-card p {
+    color: #94a3b8;
+}
+
+/* Responsive breakpoint for smaller screens */
+@media (max-width: 768px) {
+    .vm-card-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+<!-- SECTION 2: Vision & Mission Section -->
+<section class="vision-mission-section">
+    <div class="vm-card-grid">
+        
+        <!-- Vision Card -->
+        <div class="vm-card">
+            <a href="#vision" class="vm-action-btn" aria-label="Learn more about Vision">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </a>
+            <div>
+                <div class="vm-card-header">
+                    <div class="vm-icon-box">
+                        <svg viewBox="0 0 24 24" width="36" height="36" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/>
+                            <circle cx="12" cy="12" r="3"/>
+                        </svg>
+                    </div>
+                </div>
+                <h2>Our Vision</h2>
+                <p>To be a leading global technology university that provides transformative education to create leaders and innovators and generates new knowledge for society and industry.</p>
+            </div>
+            <a href="#vision" class="vm-card-footer">
+                Learn more <i class="fa-solid fa-caret-right"></i>
+            </a>
+        </div>
+
+        <!-- Mission Card -->
+        <div class="vm-card">
+            <a href="#mission" class="vm-action-btn" aria-label="Learn more about Mission">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </a>
+            <div>
+                <div class="vm-card-header">
+                    <div class="vm-icon-box">
+                        <svg viewBox="0 0 24 24" width="36" height="36" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="9"/>
+                            <circle cx="12" cy="12" r="5"/>
+                            <circle cx="12" cy="12" r="1.2"/>
+                        </svg>
+                    </div>
+                </div>
+                <h2>Our Mission</h2>
+                <p>To create an ambience in which new ideas, research, and scholarship flourish, and from which the leaders and innovators of tomorrow emerge. To address problems faced by the nation and the world through the talent we nurture and the research we do.</p>
+            </div>
+            <a href="#mission" class="vm-card-footer">
+                Learn more <i class="fa-solid fa-caret-right"></i>
+            </a>
+        </div>
+
+    </div>
+</section>

@@ -672,3 +672,124 @@ body.dark-mode .vm-overlay-box {
             opacity: 1;
             margin-top: 16px;
         }
+
+
+
+        /* --- Vision & Mission Section (Equal 50/50 Split Grid) --- */
+.vision-mission-section {
+    margin: 60px 0;
+}
+
+.vm-card-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+.vm-card {
+    position: relative;
+    background-color: var(--card-bg, #ffffff);
+    border: 1px solid var(--border-color, #e2e8f0);
+    border-radius: 28px;
+    padding: 36px 32px 32px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.vm-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+}
+
+.vm-action-btn {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background-color: #00c896;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 18px;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.vm-action-btn:hover {
+    transform: scale(1.08);
+    background-color: #00b084;
+}
+
+.vm-card-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 20px;
+}
+
+.vm-icon-box {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary-color, #004F9F);
+}
+
+.vm-card h2 {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--text-color, #1a1a1a);
+    margin: 0;
+}
+
+.vm-card p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--text-muted, #4a5568);
+    margin-bottom: 24px;
+}
+
+.vm-card-footer {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--text-color, #1a1a1a);
+    text-decoration: none;
+}
+
+.vm-card-footer i {
+    font-size: 12px;
+    transition: transform 0.2s ease;
+}
+
+.vm-card-footer:hover i {
+    transform: translateX(4px);
+}
+
+body.dark-mode .vm-card {
+    background-color: #1e293b;
+    border-color: #334155;
+}
+
+body.dark-mode .vm-card h2,
+body.dark-mode .vm-card-footer {
+    color: #f8fafc;
+}
+
+body.dark-mode .vm-card p {
+    color: #94a3b8;
+}
+
+@media (max-width: 768px) {
+    .vm-card-grid {
+        grid-template-columns: 1fr;
+    }
+}
