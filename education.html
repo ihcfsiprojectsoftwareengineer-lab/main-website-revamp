@@ -57,20 +57,10 @@
  <main class="container page-content">  
 
 
-    <div class="section-header">
-            <h1 class="page-title">Our Educational Programs</h1>
-            <p class="page-subtitle">Explore our core and elective modules designed for future engineering leaders.</p>
-        </div>
-
-
-
         <!-- Features / Partnership Section -->
 <section class="features-section container" style="padding: 60px 0;">
     <!-- Pill & Header -->
     <div style="text-align: center; margin-bottom: 40px;">
-        <span style="display: inline-block; padding: 4px 16px; border: 1px solid var(--border-color); border-radius: 20px; font-size: 14px; color: var(--text-muted); margin-bottom: 15px;">
-            • Features
-        </span>
         <h2 style="font-size: 42px; font-weight: 700; color: var(--text-color); margin-bottom: 10px;">
             A Powerful Partnership
         </h2>
@@ -152,9 +142,6 @@
 <section class="highlights-section container" style="padding: 60px 0;">
     <!-- Top Pill & Centered Section Title -->
     <div style="text-align: center; margin-bottom: 50px;">
-        <span style="display: inline-block; padding: 4px 18px; border: 1px solid var(--border-color); border-radius: 20px; font-size: 14px; color: var(--text-muted); margin-bottom: 15px;">
-            • Why With Us
-        </span>
         <h2 style="font-size: 42px; font-weight: 700; color: var(--text-color); margin-bottom: 12px; line-height: 1.2;">
             Programme Highlights
         </h2>
@@ -252,9 +239,6 @@
 <section class="lotus-enroll-section container" style="padding: 80px 0; overflow: hidden;">
     <!-- Section Header -->
     <div style="text-align: center; margin-bottom: 60px;">
-        <span style="display: inline-block; padding: 4px 18px; border: 1px solid var(--border-color); border-radius: 20px; font-size: 14px; color: var(--text-muted); margin-bottom: 15px;">
-            • Target Audience
-        </span>
         <h2 style="font-size: 42px; font-weight: 700; color: var(--text-color); margin-bottom: 12px; line-height: 1.2;">
             Who Can Enrol?
         </h2>
@@ -466,8 +450,9 @@
     }
 </style>
 
+<section id="course_modules">
 
-        <!-- 4 Filter Tabs (Hackathons, Workshop, Outreach, Dialogue Series) -->
+    <!-- 4 Filter Tabs (Hackathons, Workshop, Outreach, Dialogue Series) -->
         <div class="filter-container">
             <div class="filter-pill-switch" id="filterTabs">
                 <button class="filter-btn active" data-filter="core">Core Modules</button>
@@ -482,6 +467,8 @@
    
     
 
+</section>
+    
 
         <!-- IIT Bombay Certificate Path -->
         <section class="certificate-path" id="certificatePath" aria-labelledby="certificatePathTitle">
@@ -528,6 +515,15 @@
                     </div>
                 </article>
             </div>
+
+
+<div style="margin: 10px;"      class="header-actions">
+                <a href="contact.html" class="contact-btn">Register Now</a>
+                
+
+                <a href="education.html#course_modules" class="contact-btn">See Course Modules</a>
+            </div>
+
         </section>
 
 
@@ -550,7 +546,7 @@
                     <span>Centre of Excellence for Future Skills & Innovation </span>
                 </div>
                 <div class="footer-subtitle">
-                    Get the latest updates, harvest news, and special offers directly to your inbox.
+                     Get the latest updates, news, and event updates directly to your inbox.
                 </div>
                 <form class="subscribe-form" onsubmit="event.preventDefault();">
                     <input type="email" placeholder="youremail@mail.com" required>
