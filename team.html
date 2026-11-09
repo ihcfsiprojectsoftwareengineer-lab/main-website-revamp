@@ -3,6 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+<meta
+      name="description"
+      content="IIT Bombay-Honeywell Centre of Excellence for Future Skills & Innovation IHCFSI"
+    />
+
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "IIT Bombay-Honeywell Centre of Excellence for Future Skills & Innovation | IHCFSI",
+        "url": "ihcfsi.iitb.ac.in"
+      }
+    </script>
+
+    <link
+      rel="icon"
+      type="image/png"
+      href="./assets/favicon/favicon-96x96.png"
+      sizes="96x96"
+    />
+    <link rel="icon" type="image/svg+xml" href="./assets/favicon/favicon.svg" />
+    <link rel="shortcut icon" href="./assets/favicon/favicon.ico" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="./assets/favicon/apple-touch-icon.png"
+    />
+    <link rel="manifest" href="./assets/favicon/site.webmanifest" />
+
+
     <title>Core Team - IHCFSI</title>
     <!-- Mukta Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -209,33 +242,8 @@
 <body>
 
     <!-- Header Navigation -->
-    <header class="container">
-        <nav>
-            <a href="index.html" class="logo">
-                <img src="/assets/honeywell_logo.svg" alt="Honeywell Logo">
-                <span class="logo-separator"></span>
-                <img src="/assets/IITB_logo.png" alt="IITB Logo">
-            </a>
-            
-            <ul class="nav-links">
-                <li class="nav-item dropdown">
-                    <a href="javascript:void(0)" class="nav-link about-btn">About Us</a>
-                    <ul class="dropdown-menu">
-                        <li><a href="center.html">Center</a></li>
-                        <li><a href="team.html" style="background-color: var(--secondary-color); color: #1a1a1a;">Team</a></li>
-                    </ul>
-                </li>
-                <li class="nav-item"><a href="course.html" class="nav-link">Course</a></li>
-                <li class="nav-item"><a href="events.html" class="nav-link">Events</a></li>
-            </ul>
-
-            <div class="header-actions">
-                <button class="theme-toggle-btn" id="themeToggle" title="Toggle Light/Dark Mode">
-                    <i class="fa-solid fa-moon" id="themeIcon"></i>
-                </button>
-            </div>
-        </nav>
-    </header>
+    <!-- Header -->
+    <div id="header-container"></div>
 
     <!-- Main Content -->
     <main class="container">
@@ -588,45 +596,6 @@ Centre for Technology Alternatives for Rural Areas (C-TARA)</p>
     </main>
 
     <!-- Footer -->
-    <footer>
-        <div class="container footer-content">
-            <div class="footer-left">
-                <div class="footer-brand">
-                    <span>IIT Bombay Honeywell</span>
-                    <span>Centre of Excellence for Future Skills & Innovation </span>
-                </div>
-                <div class="footer-subtitle">
-                    Get the latest updates, news, and event updates directly to your inbox.
-                </div>
-                <form class="subscribe-form" onsubmit="event.preventDefault();">
-                    <input type="email" placeholder="youremail@mail.com" required>
-                    <button type="submit">Send</button>
-                </form>
-
-                <div class="social-icons">
-                    <a href="#" class="social-btn"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="#" class="social-btn"><i class="fa-brands fa-facebook-f"></i></a>
-                    <a href="#" class="social-btn"><i class="fa-regular fa-envelope"></i></a>
-                    <a href="#" class="social-btn"><i class="fa-solid fa-phone"></i></a>
-                </div>
-            </div>
-
-            <div class="footer-right">
-                <a href="#" class="back-to-top">Back to Top <i class="fa-solid fa-arrow-up"></i></a>
-                <ul class="footer-nav">
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Services</a></li>
-                    <li><a href="#">Product</a></li>
-                    <li><a href="#">Blogs</a></li>
-                    <li><a href="#">Contact</a></li>
-                </ul>
-                <div class="footer-legal">
-                    <a href="#">Privacy and Policy</a>
-                    <a href="#">Term and Condition</a>
-                </div>
-            </div>
-        </div>
-    </footer>
+<div id="footer-container"></div>
 </body>
 </html>
